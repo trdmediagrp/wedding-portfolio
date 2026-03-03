@@ -1,0 +1,829 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Marcus Jerido | Wedding & Editorial Photography</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --bg: #080808;
+      --bg-elevated: #111;
+      --text: #f0ece4;
+      --text-muted: #8a8580;
+      --accent: #c9a96e;
+      --serif: 'Playfair Display', 'Georgia', serif;
+      --body: 'Cormorant Garamond', 'Georgia', serif;
+      --sans: 'Inter', -apple-system, sans-serif;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--body);
+      font-weight: 300;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    /* ─── Preloader ─── */
+    .preloader {
+      position: fixed;
+      inset: 0;
+      z-index: 9999;
+      background: var(--bg);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: opacity 0.8s ease, visibility 0.8s ease;
+    }
+    .preloader.hidden { opacity: 0; visibility: hidden; pointer-events: none; }
+    .preloader-text {
+      font-family: var(--serif);
+      font-size: clamp(1rem, 3vw, 1.5rem);
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      animation: pulse 1.5s ease-in-out infinite;
+    }
+    @keyframes pulse { 0%, 100% { opacity: 0.3; } 50% { opacity: 1; } }
+
+    /* ─── Hero ─── */
+    .hero {
+      position: relative;
+      height: 100vh;
+      min-height: 600px;
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+      overflow: hidden;
+    }
+    .hero-image {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 40%;
+      filter: brightness(0.65);
+      transform: scale(1.05);
+      animation: heroZoom 20s ease-out forwards;
+    }
+    @keyframes heroZoom { to { transform: scale(1); } }
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        to top,
+        rgba(8,8,8,0.95) 0%,
+        rgba(8,8,8,0.4) 40%,
+        rgba(8,8,8,0.1) 70%,
+        rgba(8,8,8,0.3) 100%
+      );
+    }
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      padding: 0 2rem 8vh;
+      max-width: 900px;
+    }
+    .hero-tag {
+      font-family: var(--sans);
+      font-size: 0.7rem;
+      font-weight: 500;
+      letter-spacing: 0.4em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 1.5rem;
+      opacity: 0;
+      animation: fadeUp 1s ease 0.5s forwards;
+    }
+    .hero-title {
+      font-family: var(--serif);
+      font-size: clamp(2.5rem, 7vw, 5.5rem);
+      font-weight: 400;
+      line-height: 1.05;
+      letter-spacing: -0.01em;
+      margin-bottom: 1.2rem;
+      opacity: 0;
+      animation: fadeUp 1s ease 0.8s forwards;
+    }
+    .hero-subtitle {
+      font-family: var(--body);
+      font-size: clamp(1rem, 2.5vw, 1.35rem);
+      font-weight: 300;
+      color: var(--text-muted);
+      letter-spacing: 0.05em;
+      opacity: 0;
+      animation: fadeUp 1s ease 1.1s forwards;
+    }
+    .scroll-indicator {
+      position: absolute;
+      bottom: 2rem;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 2;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.5rem;
+      opacity: 0;
+      animation: fadeUp 1s ease 1.5s forwards;
+    }
+    .scroll-indicator span {
+      font-family: var(--sans);
+      font-size: 0.6rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+    }
+    .scroll-line {
+      width: 1px;
+      height: 40px;
+      background: var(--text-muted);
+      animation: scrollPulse 2s ease-in-out infinite;
+    }
+    @keyframes scrollPulse {
+      0% { transform: scaleY(0); transform-origin: top; }
+      50% { transform: scaleY(1); transform-origin: top; }
+      51% { transform-origin: bottom; }
+      100% { transform: scaleY(0); transform-origin: bottom; }
+    }
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ─── Section Layouts ─── */
+    .section { padding: clamp(4rem, 10vw, 8rem) 0; }
+    .section-header {
+      text-align: center;
+      padding: 0 2rem;
+      margin-bottom: clamp(3rem, 6vw, 5rem);
+    }
+    .section-label {
+      font-family: var(--sans);
+      font-size: 0.65rem;
+      font-weight: 500;
+      letter-spacing: 0.4em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 1rem;
+    }
+    .section-title {
+      font-family: var(--serif);
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      font-weight: 400;
+      line-height: 1.15;
+      max-width: 700px;
+      margin: 0 auto 1rem;
+    }
+    .section-desc {
+      font-family: var(--body);
+      font-size: clamp(1rem, 2vw, 1.2rem);
+      color: var(--text-muted);
+      max-width: 550px;
+      margin: 0 auto;
+      font-weight: 300;
+      letter-spacing: 0.02em;
+    }
+
+    /* ─── Divider ─── */
+    .divider { width: 60px; height: 1px; background: var(--accent); margin: 0 auto; opacity: 0.5; }
+    .divider-section { padding: clamp(2rem, 5vw, 4rem) 0; }
+
+    /* ─── Full Width Image ─── */
+    .full-image {
+      width: 100%;
+      padding: 0 clamp(1rem, 3vw, 3rem);
+    }
+    .full-image img {
+      width: 100%;
+      display: block;
+    }
+    .full-image.bleed { padding: 0; }
+    .full-image.contained { max-width: 1400px; margin: 0 auto; }
+    .full-image.narrow { max-width: 1000px; margin: 0 auto; }
+
+    /* ─── Landscape Pair (two landscape images, matched by aspect-ratio) ─── */
+    .landscape-pair {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: clamp(0.5rem, 1.5vw, 1.5rem);
+      padding: 0 clamp(1rem, 3vw, 3rem);
+      max-width: 1600px;
+      margin: 0 auto;
+    }
+    .landscape-pair img {
+      width: 100%;
+      aspect-ratio: 3 / 2;
+      object-fit: cover;
+      display: block;
+    }
+
+    /* ─── Portrait Pair (two portrait images, natural aspect ratio) ─── */
+    .portrait-pair {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: clamp(0.5rem, 1.5vw, 1.5rem);
+      padding: 0 clamp(1rem, 3vw, 3rem);
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+    .portrait-pair img {
+      width: 100%;
+      aspect-ratio: 2 / 3;
+      object-fit: cover;
+      object-position: center top;
+      display: block;
+    }
+
+    /* ─── Asymmetric (landscape only — safe with matched aspect-ratio) ─── */
+    .asymmetric {
+      display: grid;
+      gap: clamp(0.5rem, 1.5vw, 1.5rem);
+      padding: 0 clamp(1rem, 3vw, 3rem);
+      max-width: 1600px;
+      margin: 0 auto;
+    }
+    .asymmetric.right-heavy { grid-template-columns: 1fr 1.4fr; }
+    .asymmetric.left-heavy { grid-template-columns: 1.4fr 1fr; }
+    .asymmetric img {
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      object-fit: cover;
+      object-position: center 30%;
+      display: block;
+    }
+
+    /* ─── Centered Portrait ─── */
+    .centered-portrait {
+      display: flex;
+      justify-content: center;
+      padding: 0 clamp(1rem, 3vw, 3rem);
+    }
+    .centered-portrait img {
+      max-width: 550px;
+      width: 100%;
+      display: block;
+    }
+
+    /* ─── Quote / Pull Text ─── */
+    .pull-quote {
+      text-align: center;
+      padding: clamp(3rem, 8vw, 6rem) clamp(2rem, 5vw, 4rem);
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    .pull-quote blockquote {
+      font-family: var(--serif);
+      font-size: clamp(1.5rem, 3.5vw, 2.5rem);
+      font-weight: 400;
+      font-style: italic;
+      line-height: 1.4;
+    }
+    .pull-quote cite {
+      display: block;
+      margin-top: 1.5rem;
+      font-family: var(--sans);
+      font-size: 0.7rem;
+      font-style: normal;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+    }
+
+    /* ─── Session Header ─── */
+    .session-header {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+      padding: 0 clamp(1rem, 3vw, 3rem);
+      max-width: 1600px;
+      margin: 0 auto clamp(2rem, 4vw, 3.5rem);
+    }
+    .session-header::before,
+    .session-header::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: rgba(201, 169, 110, 0.2);
+    }
+    .session-header h3 {
+      font-family: var(--serif);
+      font-size: clamp(1.2rem, 3vw, 1.8rem);
+      font-weight: 400;
+      white-space: nowrap;
+      letter-spacing: 0.05em;
+    }
+    .session-header .session-type {
+      font-family: var(--sans);
+      font-size: 0.6rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      display: block;
+      margin-top: 0.3rem;
+    }
+
+    /* ─── Video Section ─── */
+    .video-section {
+      padding: 0 clamp(1rem, 3vw, 3rem);
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .video-wrapper {
+      position: relative;
+      width: 100%;
+      border-radius: 2px;
+      overflow: hidden;
+      background: #000;
+    }
+    .video-wrapper video {
+      width: 100%;
+      display: block;
+    }
+    .video-label {
+      text-align: center;
+      margin-top: 1.2rem;
+      font-family: var(--sans);
+      font-size: 0.65rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+    }
+
+    /* ─── Spacers ─── */
+    .spacer { height: clamp(2rem, 5vw, 4rem); }
+    .spacer-lg { height: clamp(3rem, 7vw, 6rem); }
+    .gallery-row { margin-bottom: clamp(0.5rem, 1.5vw, 1.5rem); }
+
+    /* ─── Footer ─── */
+    .footer {
+      text-align: center;
+      padding: clamp(4rem, 8vw, 6rem) 2rem;
+      border-top: 1px solid rgba(201, 169, 110, 0.15);
+    }
+    .footer-brand {
+      font-family: var(--serif);
+      font-size: clamp(1.2rem, 3vw, 1.8rem);
+      font-weight: 400;
+      letter-spacing: 0.1em;
+      margin-bottom: 1rem;
+    }
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      flex-wrap: wrap;
+      margin-bottom: 2rem;
+    }
+    .footer-links a {
+      font-family: var(--sans);
+      font-size: 0.7rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+    .footer-links a:hover { color: var(--accent); }
+    .footer-copy {
+      font-family: var(--sans);
+      font-size: 0.65rem;
+      color: var(--text-muted);
+      letter-spacing: 0.15em;
+    }
+
+    /* ─── Reveal Animations ─── */
+    .reveal {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: opacity 0.9s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+                  transform 0.9s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+    .reveal-delay-1 { transition-delay: 0.15s; }
+    .reveal-delay-2 { transition-delay: 0.3s; }
+
+    /* Image transitions */
+    .full-image img,
+    .landscape-pair img,
+    .portrait-pair img,
+    .asymmetric img,
+    .centered-portrait img {
+      transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
+
+    /* ─── Lightbox ─── */
+    .lightbox {
+      position: fixed;
+      inset: 0;
+      z-index: 10000;
+      background: rgba(0,0,0,0.96);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.4s ease, visibility 0.4s ease;
+      cursor: zoom-out;
+    }
+    .lightbox.active { opacity: 1; visibility: visible; }
+    .lightbox img {
+      max-width: 92vw;
+      max-height: 92vh;
+      object-fit: contain;
+      transform: scale(0.95);
+      transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
+    .lightbox.active img { transform: scale(1); }
+    .lightbox-close {
+      position: absolute;
+      top: 1.5rem;
+      right: 1.5rem;
+      width: 44px;
+      height: 44px;
+      background: none;
+      border: 1px solid rgba(255,255,255,0.2);
+      color: var(--text);
+      font-size: 1.4rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: border-color 0.3s;
+    }
+    .lightbox-close:hover { border-color: var(--accent); }
+    .lightbox-nav {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 50px;
+      height: 50px;
+      background: none;
+      border: 1px solid rgba(255,255,255,0.15);
+      color: var(--text);
+      font-size: 1.5rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: border-color 0.3s, background 0.3s;
+    }
+    .lightbox-nav:hover { border-color: var(--accent); background: rgba(255,255,255,0.05); }
+    .lightbox-prev { left: 1.5rem; }
+    .lightbox-next { right: 1.5rem; }
+
+    /* ─── Responsive ─── */
+    @media (max-width: 768px) {
+      .landscape-pair { grid-template-columns: 1fr; }
+      .landscape-pair img { aspect-ratio: auto; }
+      .portrait-pair { grid-template-columns: 1fr; max-width: 500px; }
+      .portrait-pair img { aspect-ratio: auto; }
+      .asymmetric.left-heavy,
+      .asymmetric.right-heavy { grid-template-columns: 1fr; }
+      .asymmetric img { aspect-ratio: auto; }
+      .session-header::before { display: none; }
+      .lightbox-nav { display: none; }
+    }
+
+    .gallery-img { cursor: zoom-in; }
+  </style>
+</head>
+<body>
+
+  <!-- Preloader -->
+  <div class="preloader" id="preloader">
+    <p class="preloader-text">Marcus Jerido</p>
+  </div>
+
+  <!-- Lightbox -->
+  <div class="lightbox" id="lightbox">
+    <button class="lightbox-close" onclick="closeLightbox()">&times;</button>
+    <button class="lightbox-nav lightbox-prev" onclick="navLightbox(-1)">&#8249;</button>
+    <button class="lightbox-nav lightbox-next" onclick="navLightbox(1)">&#8250;</button>
+    <img id="lightbox-img" src="" alt="">
+  </div>
+
+  <!-- ═══════════════════════════════════════ -->
+  <!-- HERO: Rolls Royce Night -->
+  <!-- ═══════════════════════════════════════ -->
+  <section class="hero">
+    <img class="hero-image"
+      src="images/Marcus-TRDMedia_LuxuryWedding_RollsRoyceNight_04.jpg"
+      alt="Luxury wedding portrait — couple hand in hand before a white Rolls Royce at twilight">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <p class="hero-tag">Wedding &amp; Editorial Photography</p>
+      <h1 class="hero-title">Marcus Jerido</h1>
+      <p class="hero-subtitle">Luxury portraiture &middot; Editorial bridal &middot; Cinematic storytelling</p>
+    </div>
+    <div class="scroll-indicator">
+      <span>Scroll</span>
+      <div class="scroll-line"></div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════ -->
+  <!-- OPENING STATEMENT -->
+  <!-- ═══════════════════════════════════════ -->
+  <div class="pull-quote reveal">
+    <blockquote>
+      &ldquo;I don&rsquo;t just photograph weddings&mdash;I craft the feeling of a moment you&rsquo;ll hold forever.&rdquo;
+    </blockquote>
+    <cite>Marcus Jerido &middot; TRD Media Group</cite>
+  </div>
+
+
+  <!-- ═══════════════════════════════════════ -->
+  <!-- HIGHLIGHT REEL -->
+  <!-- ═══════════════════════════════════════ -->
+  <div class="video-section reveal">
+    <div class="video-wrapper">
+      <video
+        src="images/highlight-reel.mp4"
+        controls
+        playsinline
+        preload="metadata"
+        poster="images/Marcus-TRDMedia_FashionBridal_CarPortrait.jpg"
+      ></video>
+    </div>
+    <p class="video-label">Styled Shoot Highlight Reel</p>
+  </div>
+
+  <div class="spacer-lg"></div>
+
+  <div class="divider-section"><div class="divider"></div></div>
+
+
+  <!-- ═══════════════════════════════════════ -->
+  <!-- SECTION 1: BRIDAL EDITORIAL -->
+  <!-- ═══════════════════════════════════════ -->
+  <section class="section">
+    <div class="section-header reveal">
+      <p class="section-label">Featured Session</p>
+      <h2 class="section-title">Bridal Editorial</h2>
+      <p class="section-desc">Luxury estate &middot; Cinematic night photography &middot; Veil artistry</p>
+    </div>
+
+    <!-- Lead: Intimate veil moment — foreheads touching, golden light -->
+    <div class="full-image contained gallery-row reveal">
+      <img class="gallery-img" src="images/Marcus-TRDMedia_EditorialVeil_Intimate_02_(2).jpg"
+           alt="Intimate moment under the veil — foreheads touching in golden light" loading="lazy">
+    </div>
+
+    <div class="spacer"></div>
+
+    <!-- Veil portraits — BOTH LANDSCAPE 3:2, safe to pair -->
+    <div class="landscape-pair gallery-row reveal">
+      <img class="gallery-img" src="images/Marcus-TRDMedia_BridalPortrait_SoftLight_03.jpg"
+           alt="Bridal portrait — soft light through the veil with mirror reflection" loading="lazy">
+      <img class="gallery-img" src="images/Marcus-TRDMedia_EditorialVeil_CloseUp_02.jpg"
+           alt="Editorial veil close-up — hand on cheek, lace detail" loading="lazy">
+    </div>
+
+    <div class="spacer"></div>
+
+    <!-- Fashion bridal with car — full width showstopper -->
+    <div class="full-image contained gallery-row reveal">
+      <img class="gallery-img" src="images/Marcus-TRDMedia_FashionBridal_CarPortrait.jpg"
+           alt="Fashion bridal portrait — bride beside luxury convertible, groom in driver's seat" loading="lazy">
+    </div>
+
+    <div class="spacer"></div>
+
+    <!-- Staircase: each one full width to avoid cropping the different ratios -->
+    <div class="full-image contained gallery-row reveal">
+      <img class="gallery-img" src="images/Marcus-TRDMedia_WeddingEditorial_GrandStaircase_06.jpg"
+           alt="Groom kissing the bride's hand on the grand staircase" loading="lazy">
+    </div>
+
+    <div class="spacer"></div>
+
+    <!-- Staircase descent + marble overlook — BOTH have people edge-to-edge, show full -->
+    <div class="landscape-pair gallery-row reveal">
+      <img class="gallery-img" src="images/Marcus-TRDMedia_LuxuryBridal-Staircase_01.jpg"
+           alt="Bride descending the staircase as groom watches from below"
+           style="aspect-ratio: auto; object-fit: cover; object-position: center;" loading="lazy">
+      <img class="gallery-img" src="images/Marcus-TRDMedia_WeddingEditorial_Overlook_07.jpg"
+           alt="Overhead view — couple embracing on marble floor"
+           style="aspect-ratio: auto; object-fit: cover; object-position: center;" loading="lazy">
+    </div>
+  </section>
+
+
+  <div class="divider-section"><div class="divider"></div></div>
+
+
+  <!-- ═══════════════════════════════════════ -->
+  <!-- SECTION 2: TAY & KENNEDY -->
+  <!-- ═══════════════════════════════════════ -->
+  <section class="section">
+    <div class="session-header reveal">
+      <h3>Tay &amp; Kennedy <span class="session-type">Engagement Session</span></h3>
+    </div>
+
+    <!-- Lead: Teal velvet couch — LANDSCAPE, full width hero for the session -->
+    <div class="full-image contained gallery-row reveal">
+      <img class="gallery-img" src="images/Tay-&-Kennedy5.jpg"
+           alt="Couple on teal velvet couch — luxury editorial engagement" loading="lazy">
+    </div>
+
+    <div class="spacer"></div>
+
+    <!-- Close-up portrait — LANDSCAPE, gorgeous standalone -->
+    <div class="full-image narrow gallery-row reveal">
+      <img class="gallery-img" src="images/Tay-&-Kennedy-9.jpg"
+           alt="Intimate close-up — skin to skin, warm and genuine" loading="lazy">
+    </div>
+
+    <div class="spacer"></div>
+
+    <!-- Studio portraits — BOTH PORTRAIT 1920x2400, identical ratio, safe pair -->
+    <div class="portrait-pair gallery-row reveal">
+      <img class="gallery-img" src="images/Tay-&-Kennedy1.jpg"
+           alt="Standing hand in hand — all black, dramatic spotlight" loading="lazy">
+      <img class="gallery-img" src="images/Tay-&-Kennedy2.jpg"
+           alt="Forehead kiss — shadow play, tender and cinematic" loading="lazy">
+    </div>
+
+    <div class="spacer"></div>
+
+    <!-- Teal set portraits — TK6 (1582x2400) + TK7 (1920x2400), both PORTRAIT -->
+    <div class="portrait-pair gallery-row reveal">
+      <img class="gallery-img" src="images/Tay-&-Kennedy6.jpg"
+           alt="Ornate gold mirror — she's seated, he's standing, teal and gold" loading="lazy">
+      <img class="gallery-img" src="images/Tay-&-Kennedy7.jpg"
+           alt="Teal velvet chair — seated together, moody and editorial" loading="lazy">
+    </div>
+
+    <div class="spacer"></div>
+
+    <!-- B&W closer — PORTRAIT, standalone centered for impact -->
+    <div class="centered-portrait gallery-row reveal">
+      <img class="gallery-img" src="images/Tay-&-Kennedy8.jpg"
+           alt="Black and white — artistic embrace, timeless" loading="lazy">
+    </div>
+  </section>
+
+
+  <div class="divider-section"><div class="divider"></div></div>
+
+
+  <!-- ═══════════════════════════════════════ -->
+  <!-- SECTION 3: THE MALONES -->
+  <!-- ═══════════════════════════════════════ -->
+  <section class="section">
+    <div class="session-header reveal">
+      <h3>The Malones <span class="session-type">Engagement Session</span></h3>
+    </div>
+
+    <!-- Lead: Garden bench — LANDSCAPE, warm and romantic full width -->
+    <div class="full-image contained gallery-row reveal">
+      <img class="gallery-img" src="images/themalones7.jpg"
+           alt="Couple on garden bench — coordinated blush pink, golden hour" loading="lazy">
+    </div>
+
+    <div class="spacer"></div>
+
+    <!-- Iron scrollwork pair — BOTH PORTRAIT 1600x2400, identical ratio -->
+    <div class="portrait-pair gallery-row reveal">
+      <img class="gallery-img" src="images/themalones5.jpg"
+           alt="Window light portrait — dramatic iron scrollwork, sequin dress" loading="lazy">
+      <img class="gallery-img" src="images/themalones6.jpg"
+           alt="Full length on staircase — black sequin gown, commanding presence" loading="lazy">
+    </div>
+
+    <div class="spacer"></div>
+
+    <!-- Over-shoulder embrace — PORTRAIT, standalone for the ring detail -->
+    <div class="centered-portrait gallery-row reveal">
+      <img class="gallery-img" src="images/themalones9.jpg"
+           alt="Over-shoulder embrace — ring detail, jewelry, emotion" loading="lazy">
+    </div>
+
+    <div class="spacer"></div>
+
+    <!-- Classical columns — PORTRAIT, standalone elegance -->
+    <div class="centered-portrait gallery-row reveal">
+      <img class="gallery-img" src="images/themalones1-final-1-3-2026.jpg"
+           alt="Couple in blush pink — classical columns, estate grounds" loading="lazy">
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════ -->
+  <!-- CLOSING QUOTE -->
+  <!-- ═══════════════════════════════════════ -->
+  <div class="pull-quote reveal">
+    <blockquote>
+      Every couple deserves imagery that feels as extraordinary as their love story.
+    </blockquote>
+  </div>
+
+
+  <!-- ═══════════════════════════════════════ -->
+  <!-- FOOTER -->
+  <!-- ═══════════════════════════════════════ -->
+  <footer class="footer">
+    <p class="footer-brand">Marcus Jerido</p>
+    <div class="footer-links">
+      <a href="mailto:marcus@trdmediagroup.com">Email</a>
+      <a href="https://www.instagram.com/trdmediagrp" target="_blank" rel="noopener">Instagram</a>
+      <a href="https://trdmediagroup.com" target="_blank" rel="noopener">Website</a>
+    </div>
+    <p class="footer-copy">&copy; 2026 TRD Media Group. All rights reserved.</p>
+  </footer>
+
+
+  <script>
+    // ─── Preloader ───
+    window.addEventListener('load', () => {
+      setTimeout(() => document.getElementById('preloader').classList.add('hidden'), 600);
+    });
+
+    // ─── Scroll Reveal ───
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.08, rootMargin: '0px 0px -50px 0px' });
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+    // ─── Lightbox with navigation ───
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+    const allImages = Array.from(document.querySelectorAll('.gallery-img'));
+    let currentIdx = 0;
+
+    allImages.forEach((img, i) => {
+      img.addEventListener('click', () => {
+        currentIdx = i;
+        showLightbox(img.src, img.alt);
+      });
+    });
+
+    function showLightbox(src, alt) {
+      lightboxImg.src = src;
+      lightboxImg.alt = alt;
+      lightbox.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeLightbox() {
+      lightbox.classList.remove('active');
+      document.body.style.overflow = '';
+    }
+
+    function navLightbox(dir) {
+      currentIdx = (currentIdx + dir + allImages.length) % allImages.length;
+      const img = allImages[currentIdx];
+      lightboxImg.src = img.src;
+      lightboxImg.alt = img.alt;
+    }
+
+    lightbox.addEventListener('click', (e) => {
+      if (e.target === lightbox) closeLightbox();
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (!lightbox.classList.contains('active')) return;
+      if (e.key === 'Escape') closeLightbox();
+      if (e.key === 'ArrowLeft') navLightbox(-1);
+      if (e.key === 'ArrowRight') navLightbox(1);
+    });
+
+    // ─── Parallax hero ───
+    const heroImg = document.querySelector('.hero-image');
+    let ticking = false;
+    window.addEventListener('scroll', () => {
+      if (!ticking) {
+        requestAnimationFrame(() => {
+          const scroll = window.scrollY;
+          if (scroll < window.innerHeight) {
+            heroImg.style.transform = `scale(${1 + scroll * 0.0001}) translateY(${scroll * 0.3}px)`;
+          }
+          ticking = false;
+        });
+        ticking = true;
+      }
+    });
+  </script>
+
+</body>
+</html>
