@@ -889,5 +889,38 @@
     });
   </script>
 
+  <!-- Visitor notification — alerts Marcus when someone views the portfolio -->
+  <script>
+    (function() {
+      // Skip if this is the owner (set flag via ?owner=1 in URL)
+      if (new URLSearchParams(window.location.search).has('owner')) {
+        localStorage.setItem('portfolio_owner', '1');
+        return;
+      }
+      if (localStorage.getItem('portfolio_owner')) return;
+
+      // Only fire once per session
+      if (sessionStorage.getItem('portfolio_notified')) return;
+      sessionStorage.setItem('portfolio_notified', '1');
+
+      // Collect visitor info
+      const data = {
+        timestamp: new Date().toISOString(),
+        userAgent: navigator.userAgent,
+        referrer: document.referrer || 'Direct',
+        screen: screen.width + 'x' + screen.height,
+        language: navigator.language,
+        timezone: Intl.DateTimeFormat().resolvedOptions().timeZone
+      };
+
+      // Send notification
+      fetch('https://portfolio-notify.vercel.app/api/visit', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data)
+      }).catch(function() { /* silent fail — don't affect portfolio UX */ });
+    })();
+  </script>
+
 </body>
 </html>
