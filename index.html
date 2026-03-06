@@ -904,13 +904,26 @@
       sessionStorage.setItem('portfolio_notified', '1');
 
       // Collect visitor info
+      const conn = navigator.connection || navigator.mozConnection || navigator.webkitConnection;
       const data = {
         timestamp: new Date().toISOString(),
         userAgent: navigator.userAgent,
         referrer: document.referrer || 'Direct',
         screen: screen.width + 'x' + screen.height,
+        viewport: window.innerWidth + 'x' + window.innerHeight,
+        devicePixelRatio: window.devicePixelRatio || 1,
+        colorDepth: screen.colorDepth,
         language: navigator.language,
-        timezone: Intl.DateTimeFormat().resolvedOptions().timeZone
+        languages: (navigator.languages || []).join(', '),
+        timezone: Intl.DateTimeFormat().resolvedOptions().timeZone,
+        platform: navigator.platform || 'Unknown',
+        maxTouchPoints: navigator.maxTouchPoints || 0,
+        hardwareConcurrency: navigator.hardwareConcurrency || 'Unknown',
+        deviceMemory: navigator.deviceMemory || 'Unknown',
+        cookiesEnabled: navigator.cookieEnabled,
+        doNotTrack: navigator.doNotTrack || 'Unset',
+        connection: conn ? { type: conn.effectiveType, downlink: conn.downlink, rtt: conn.rtt } : null,
+        pageLoadTime: Math.round(performance.now())
       };
 
       // Send notification
