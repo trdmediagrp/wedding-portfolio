@@ -1,0 +1,1568 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Malone Day-Of Shot List · Marcus Jerido</title>
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="description" content="Private mood board — proposed day-of style for Kristen Malone.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=Inter:wght@300;400;500&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&display=swap" rel="stylesheet">
+
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    :root {
+      --bg: #080808;
+      --bg-elevated: #111;
+      --text: #f0ece4;
+      --text-muted: #8a8580;
+      --accent: #c9a96e;
+      --line: rgba(201,169,110,0.18);
+      --love: #d96a6a;
+      --maybe: #c9a96e;
+      --skip: #6b6661;
+      --serif: 'Playfair Display', 'Georgia', serif;
+      --body: 'Cormorant Garamond', 'Georgia', serif;
+      --sans: 'Inter', -apple-system, sans-serif;
+    }
+    html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; }
+    body {
+      background: var(--bg); color: var(--text); font-family: var(--body);
+      font-weight: 300; line-height: 1.7; overflow-x: hidden;
+      padding-bottom: 88px;
+    }
+    img { max-width: 100%; height: auto; display: block; }
+
+    /* ─── Gate (token check) ─── */
+    .gate {
+      position: fixed; inset: 0; z-index: 9999; background: var(--bg);
+      display: flex; align-items: center; justify-content: center; padding: 2rem;
+    }
+    .gate-inner { text-align: center; max-width: 520px; }
+    .gate h1 {
+      font-family: var(--serif); font-size: clamp(1.6rem, 4vw, 2.4rem);
+      font-weight: 400; margin-bottom: 1.2rem; letter-spacing: 0.02em;
+    }
+    .gate p { color: var(--text-muted); font-size: 1rem; line-height: 1.7;
+      margin-bottom: 1.6rem; }
+    .gate .accent-line { width: 60px; height: 1px; background: var(--accent);
+      margin: 1.4rem auto; opacity: 0.5; }
+
+    /* ─── Header ─── */
+    .top-bar {
+      display: flex; justify-content: space-between; align-items: center;
+      padding: clamp(1.2rem, 3vw, 2rem) clamp(1.2rem, 4vw, 3rem);
+      border-bottom: 1px solid var(--line);
+    }
+    .top-bar .brand {
+      font-family: var(--serif); font-size: clamp(0.95rem, 1.6vw, 1.2rem);
+      letter-spacing: 0.18em; color: var(--accent); font-weight: 400;
+    }
+    .top-bar .crumb {
+      font-family: var(--sans); font-size: clamp(0.55rem, 0.9vw, 0.7rem);
+      letter-spacing: 0.3em; text-transform: uppercase; color: var(--text-muted);
+    }
+
+    /* ─── Hero ─── */
+    .hero {
+      padding: clamp(4rem, 10vw, 8rem) clamp(1.5rem, 4vw, 3rem)
+              clamp(3rem, 6vw, 5rem);
+      text-align: center; max-width: 1100px; margin: 0 auto;
+    }
+    .hero .eyebrow {
+      font-family: var(--sans); font-size: clamp(0.6rem, 1vw, 0.72rem);
+      letter-spacing: 0.4em; text-transform: uppercase; color: var(--accent);
+      margin-bottom: clamp(1.2rem, 2.5vw, 2rem);
+    }
+    .hero h1 {
+      font-family: var(--serif); font-weight: 400;
+      font-size: clamp(2.6rem, 7vw, 5.4rem); line-height: 1.05;
+      letter-spacing: -0.005em; margin-bottom: clamp(1rem, 2vw, 1.4rem);
+    }
+    .hero h1 em { font-style: italic; color: var(--accent); }
+    .hero .sub {
+      font-family: var(--body); font-size: clamp(1rem, 1.6vw, 1.25rem);
+      color: var(--text-muted); font-style: italic;
+      max-width: 640px; margin: 0 auto;
+    }
+    .hero .divider {
+      width: 70px; height: 1px; background: var(--accent);
+      margin: clamp(2rem, 4vw, 3rem) auto; opacity: 0.5;
+    }
+    .hero .meta {
+      display: grid; grid-template-columns: repeat(3, 1fr);
+      gap: clamp(1rem, 2vw, 2rem); max-width: 720px; margin: 0 auto;
+      padding-top: clamp(1.5rem, 3vw, 2.5rem); border-top: 1px solid var(--line);
+    }
+    .hero .meta dt {
+      font-family: var(--sans); font-size: 0.6rem; letter-spacing: 0.3em;
+      text-transform: uppercase; color: var(--text-muted); margin-bottom: 0.4rem;
+    }
+    .hero .meta dd {
+      font-family: var(--serif); font-size: clamp(0.95rem, 1.5vw, 1.05rem);
+      font-weight: 400;
+    }
+
+    /* ─── Intro ─── */
+    .intro {
+      padding: clamp(3rem, 6vw, 5rem) clamp(1.5rem, 4vw, 3rem);
+      max-width: 760px; margin: 0 auto;
+    }
+    .intro h2 {
+      font-family: var(--serif); font-weight: 400;
+      font-size: clamp(1.6rem, 3vw, 2.3rem); margin-bottom: 1.4rem;
+      line-height: 1.25;
+    }
+    .intro p {
+      font-family: var(--body); font-size: clamp(1.05rem, 1.5vw, 1.2rem);
+      line-height: 1.75; color: var(--text); margin-bottom: 1rem;
+    }
+    .intro .how {
+      margin-top: clamp(2rem, 3vw, 2.5rem);
+      padding: clamp(1.4rem, 2.5vw, 2rem);
+      border: 1px solid var(--line); background: rgba(201,169,110,0.03);
+    }
+    .intro .how h3 {
+      font-family: var(--sans); font-size: 0.7rem; font-weight: 500;
+      letter-spacing: 0.3em; text-transform: uppercase; color: var(--accent);
+      margin-bottom: 1rem;
+    }
+    .intro .how ol {
+      padding-left: 1.2rem; font-family: var(--body);
+      font-size: clamp(1rem, 1.4vw, 1.1rem); line-height: 1.85;
+    }
+    .intro .sig {
+      margin-top: clamp(2rem, 4vw, 3rem); font-family: var(--sans);
+      font-size: 0.7rem; letter-spacing: 0.3em; text-transform: uppercase;
+      color: var(--accent);
+    }
+
+    /* ─── Shots grid ─── */
+    .shots {
+      max-width: 1280px; margin: 0 auto;
+      padding: 0 clamp(1.5rem, 4vw, 3rem) clamp(2rem, 5vw, 5rem);
+    }
+    .shots-divider {
+      display: flex; align-items: center; gap: clamp(1rem, 2vw, 2rem);
+      max-width: 1280px; margin: 0 auto clamp(2.5rem, 5vw, 4rem);
+      padding: 0 clamp(1.5rem, 4vw, 3rem);
+    }
+    .shots-divider::before, .shots-divider::after {
+      content: ''; flex: 1; height: 1px; background: var(--line);
+    }
+    .shots-divider h2 {
+      font-family: var(--serif); font-weight: 400;
+      font-size: clamp(1.1rem, 2.4vw, 1.6rem);
+      letter-spacing: 0.04em; white-space: nowrap;
+    }
+    .shots-divider .sub {
+      display: block; font-family: var(--sans); font-size: 0.55rem;
+      letter-spacing: 0.3em; text-transform: uppercase;
+      color: var(--text-muted); margin-top: 0.4rem;
+    }
+
+    .shot-card {
+      display: grid; grid-template-columns: 1.1fr 1fr;
+      gap: clamp(1.5rem, 4vw, 3rem);
+      padding: clamp(2rem, 4vw, 3.5rem) 0; align-items: center;
+      border-top: 1px solid var(--line);
+      transition: opacity 0.3s ease;
+    }
+    .shot-card:first-of-type { border-top: none; }
+    .shot-img { background: var(--bg-elevated); cursor: zoom-in; }
+    .shot-img img { width: 100%; }
+    .shot-num {
+      font-family: var(--sans); font-size: 0.62rem;
+      letter-spacing: 0.32em; text-transform: uppercase; color: var(--accent);
+      margin-bottom: 0.9rem;
+    }
+    .shot-title {
+      font-family: var(--serif); font-weight: 400;
+      font-size: clamp(1.4rem, 2.4vw, 1.9rem); line-height: 1.2;
+      margin-bottom: 0.9rem;
+    }
+    .shot-desc {
+      font-family: var(--body); font-size: clamp(1.02rem, 1.4vw, 1.15rem);
+      line-height: 1.75; color: var(--text); margin-bottom: 1.4rem;
+    }
+    .shot-meta {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem;
+      padding: 1rem 0; margin-bottom: 1.4rem;
+      border-top: 1px solid var(--line); border-bottom: 1px solid var(--line);
+    }
+    .shot-meta dt {
+      font-family: var(--sans); font-size: 0.55rem;
+      letter-spacing: 0.3em; text-transform: uppercase;
+      color: var(--text-muted); margin-bottom: 0.3rem;
+    }
+    .shot-meta dd {
+      font-family: var(--body); font-size: 0.95rem; color: var(--text);
+    }
+
+    .rate { display: flex; gap: 0.6rem; flex-wrap: wrap; }
+    .rate .r {
+      flex: 1 1 0; min-width: 96px;
+      padding: 0.85rem 0.8rem;
+      background: transparent; border: 1px solid var(--line);
+      color: var(--text); font-family: var(--sans); font-size: 0.62rem;
+      letter-spacing: 0.28em; text-transform: uppercase;
+      cursor: pointer; transition: all 0.2s ease;
+      display: flex; align-items: center; justify-content: center; gap: 0.5rem;
+    }
+    .rate .r .r-icon { font-family: var(--serif); font-size: 0.95rem;
+      letter-spacing: 0; transform: translateY(-1px); }
+    .rate .r:hover { border-color: var(--accent); color: var(--accent); }
+    .rate .r.active { border-color: transparent; }
+    .rate .r.active.r-love { background: var(--love); color: #fff; }
+    .rate .r.active.r-maybe { background: var(--maybe); color: #1a1410; }
+    .rate .r.active.r-skip { background: var(--skip); color: #fff; }
+    .shot-card[data-vote="skip"] { opacity: 0.55; }
+    .shot-card[data-vote="love"] {
+      background: linear-gradient(90deg, rgba(217,106,106,0.04) 0%, transparent 60%);
+    }
+
+    /* ─── Sticky summary bar ─── */
+    .sumbar {
+      position: fixed; bottom: 0; left: 0; right: 0; z-index: 50;
+      background: rgba(8,8,8,0.96); backdrop-filter: blur(10px);
+      border-top: 1px solid var(--line);
+      padding: 0.85rem clamp(1.2rem, 3vw, 2.4rem);
+      display: flex; align-items: center; justify-content: space-between;
+      gap: 1rem; flex-wrap: wrap;
+    }
+    .sumbar .counts {
+      display: flex; gap: 1.2rem; flex-wrap: wrap;
+      font-family: var(--sans); font-size: 0.65rem;
+      letter-spacing: 0.18em; text-transform: uppercase; color: var(--text-muted);
+    }
+    .sumbar .counts strong { color: var(--text); margin-right: 0.4rem;
+      font-weight: 500; font-size: 0.78rem; }
+    .sumbar .dot { display: inline-block; width: 7px; height: 7px;
+      border-radius: 50%; margin-right: 0.5rem; vertical-align: 1px; }
+    .dot.love { background: var(--love); }
+    .dot.maybe { background: var(--maybe); }
+    .dot.skip { background: var(--skip); }
+    .sumbar .actions { display: flex; gap: 0.6rem; flex-wrap: wrap; }
+    .sumbar button {
+      padding: 0.7rem 1.3rem; background: transparent;
+      border: 1px solid var(--accent); color: var(--accent);
+      font-family: var(--sans); font-size: 0.62rem;
+      letter-spacing: 0.3em; text-transform: uppercase; cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    .sumbar button.primary { background: var(--accent); color: #1a1410; }
+    .sumbar button:hover { filter: brightness(1.1); }
+    .sumbar button.ghost { border-color: var(--line); color: var(--text-muted); }
+    .sumbar button.ghost:hover { color: var(--text); border-color: var(--text-muted); }
+
+    /* ─── Modal ─── */
+    .modal-bg {
+      position: fixed; inset: 0; z-index: 60; background: rgba(0,0,0,0.85);
+      display: none; align-items: center; justify-content: center; padding: 1.5rem;
+    }
+    .modal-bg.open { display: flex; }
+    .modal {
+      background: #0c0c0c; border: 1px solid var(--line);
+      max-width: 600px; width: 100%; max-height: 88vh; overflow-y: auto;
+      padding: clamp(1.6rem, 3vw, 2.4rem); position: relative;
+    }
+    .modal h3 {
+      font-family: var(--serif); font-weight: 400; font-size: 1.7rem;
+      margin-bottom: 0.5rem;
+    }
+    .modal .modal-sub {
+      color: var(--text-muted); font-size: 0.95rem; margin-bottom: 1.4rem;
+    }
+    .modal label {
+      display: block; font-family: var(--sans); font-size: 0.6rem;
+      letter-spacing: 0.3em; text-transform: uppercase; color: var(--accent);
+      margin: 1rem 0 0.4rem;
+    }
+    .modal input, .modal textarea {
+      width: 100%; background: #050505; border: 1px solid var(--line);
+      color: var(--text); padding: 0.75rem 0.85rem;
+      font-family: var(--body); font-size: 1rem; line-height: 1.5;
+      transition: border-color 0.2s;
+    }
+    .modal input:focus, .modal textarea:focus {
+      outline: none; border-color: var(--accent);
+    }
+    .modal textarea { min-height: 110px; resize: vertical; }
+    .modal .summary-preview {
+      margin-top: 1.2rem; padding: 0.9rem 1rem; background: #050505;
+      border: 1px solid var(--line); font-family: 'Consolas', monospace;
+      font-size: 0.78rem; color: var(--text-muted); white-space: pre-wrap;
+      max-height: 180px; overflow-y: auto;
+    }
+    .modal .modal-actions {
+      display: flex; gap: 0.6rem; flex-wrap: wrap; margin-top: 1.6rem;
+    }
+    .modal button {
+      padding: 0.85rem 1.4rem; background: transparent;
+      border: 1px solid var(--accent); color: var(--accent);
+      font-family: var(--sans); font-size: 0.62rem;
+      letter-spacing: 0.3em; text-transform: uppercase; cursor: pointer;
+      transition: all 0.2s;
+    }
+    .modal button.primary { background: var(--accent); color: #1a1410; }
+    .modal button:hover { filter: brightness(1.1); }
+    .modal button:disabled { opacity: 0.5; cursor: not-allowed; }
+    .modal .close {
+      position: absolute; top: 1rem; right: 1rem; background: none;
+      border: 1px solid var(--line); color: var(--text-muted);
+      width: 36px; height: 36px; cursor: pointer; padding: 0;
+      letter-spacing: 0; font-size: 1.1rem;
+    }
+    .modal .toast {
+      margin-top: 1rem; padding: 0.75rem 1rem;
+      background: rgba(201,169,110,0.1); border-left: 2px solid var(--accent);
+      color: var(--text); font-size: 0.92rem; display: none;
+    }
+    .modal .toast.show { display: block; }
+    .modal .toast.error {
+      background: rgba(217,106,106,0.1); border-left-color: var(--love);
+    }
+
+    /* ─── Lightbox ─── */
+    .lb {
+      position: fixed; inset: 0; z-index: 70; background: rgba(0,0,0,0.96);
+      display: none; align-items: center; justify-content: center;
+      cursor: zoom-out; padding: 1.5rem;
+    }
+    .lb.open { display: flex; }
+    .lb img { max-width: 94vw; max-height: 94vh; object-fit: contain; }
+
+    /* ─── Footer ─── */
+    .footer {
+      text-align: center; padding: clamp(2.5rem, 6vw, 4.5rem) 1.5rem;
+      border-top: 1px solid var(--line);
+    }
+    .footer-brand {
+      font-family: var(--serif); font-size: 1.15rem;
+      letter-spacing: 0.18em; margin-bottom: 0.8rem; color: var(--accent);
+    }
+    .footer-tag {
+      font-family: var(--sans); font-size: 0.6rem;
+      letter-spacing: 0.3em; text-transform: uppercase; color: var(--text-muted);
+    }
+
+    @media (max-width: 760px) {
+      .top-bar { padding: 0.9rem 1rem; }
+      .top-bar .crumb { display: none; }
+      .hero { padding-top: 3.5rem; padding-bottom: 2.5rem; }
+      .hero .meta { grid-template-columns: 1fr; }
+      .shot-card { grid-template-columns: 1fr; padding: 2.2rem 0; }
+      .sumbar { padding: 0.7rem 0.9rem; gap: 0.6rem; }
+      .sumbar .counts { font-size: 0.55rem; gap: 0.7rem; width: 100%;
+        justify-content: space-between; }
+      .sumbar .counts strong { font-size: 0.7rem; }
+      .sumbar .actions { width: 100%; }
+      .sumbar button { flex: 1; padding: 0.65rem 0.5rem; font-size: 0.55rem;
+        letter-spacing: 0.2em; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- Soft access gate (URL token) -->
+<div class="gate" id="gate" style="display:none">
+  <div class="gate-inner">
+    <h1>Private mood board</h1>
+    <p>This page is for invited clients. If Marcus sent you a link, please use the full URL — it should include an access key.</p>
+    <div class="accent-line"></div>
+    <p style="font-size: 0.8rem;">trdmediagrp.com · marcus.jerido@gmail.com</p>
+  </div>
+</div>
+
+<header class="top-bar">
+  <div class="brand">MARCUS JERIDO</div>
+  <div class="crumb">Private · The Malone Mood Board</div>
+</header>
+
+<section class="hero">
+  <div class="eyebrow">Reference Mood Board · 34 Frames</div>
+  <h1>The Malone <em>Day-Of Shot List</em></h1>
+  <p class="sub">Proposed style for your wedding day — frame by frame.</p>
+  <div class="divider"></div>
+  <dl class="meta">
+    <div><dt>Prepared For</dt><dd>Kristen Malone</dd></div>
+    <div><dt>Photographer</dt><dd>Marcus Jerido · TRD Media</dd></div>
+    <div><dt>Prepared</dt><dd>May 2026</dd></div>
+  </dl>
+</section>
+
+<section class="intro">
+  <h2>Hi Kristen — here's the look I'm proposing for your day.</h2>
+  <p>None of these are your photos. They're frames from a similar shoot I'm using to show you the style, lighting and pacing I'd bring to your wedding day. Think of it as a reference reel — the vibe, not the literal plan.</p>
+  <p>I haven't seen your dress, florals, or venue setup yet, so the specifics on your day will look different. What carries over is the approach: editorial portraits, soft natural light where possible, real candids mixed with composed frames, and a few signature moments shot intentionally — not in passing.</p>
+
+  <div class="how">
+    <h3>How to use this</h3>
+    <ol>
+      <li>Scroll through. Tap <strong>Love it</strong>, <strong>Maybe</strong>, or <strong>Skip</strong> under each frame.</li>
+      <li>Your picks save as you go — close the tab and come back any time.</li>
+      <li>When you're done, hit <strong>Send My Picks</strong> at the bottom. That delivers your ratings straight to me.</li>
+    </ol>
+  </div>
+
+  <p class="sig">— Marcus</p>
+</section>
+
+<div class="shots-divider">
+  <h2>The Shots<span class="sub">34 Frames</span></h2>
+</div>
+
+<main class="shots">
+
+<article class="shot-card" id="shot-01" data-id="shot-01" data-num="Shot 01" data-title="Suite Reveal — Seated Wide">
+  <div class="shot-img">
+    <img src="../images/kristen/shot-01.jpg" width="1200" height="670" alt="Suite Reveal — Seated Wide" loading="lazy" decoding="async">
+  </div>
+  <div class="shot-body">
+    <div class="shot-num">Shot 01 · of 34</div>
+    <h3 class="shot-title">Suite Reveal — Seated Wide</h3>
+    <p class="shot-desc">An editorial opener. Bride seated, dress fully spread, room as a frame. The whole environment becomes part of the portrait.</p>
+    <dl class="shot-meta">
+      <div><dt>Framing</dt><dd>Wide environmental</dd></div>
+      <div><dt>Lens · Exposure</dt><dd>24–35mm · 1/1000s · f/2</dd></div>
+    </dl>
+    <div class="rate" role="group" aria-label="Rate this shot">
+      <button class="r r-love" data-vote="love" type="button" aria-label="Love it">
+        <span class="r-icon">&#9825;</span><span class="r-label">Love it</span>
+      </button>
+      <button class="r r-maybe" data-vote="maybe" type="button" aria-label="Maybe">
+        <span class="r-icon">~</span><span class="r-label">Maybe</span>
+      </button>
+      <button class="r r-skip" data-vote="skip" type="button" aria-label="Skip">
+        <span class="r-icon">&#10005;</span><span class="r-label">Skip</span>
+      </button>
+    </div>
+  </div>
+</article>
+
+
+<article class="shot-card" id="shot-02" data-id="shot-02" data-num="Shot 02" data-title="Suite Reveal — Vertical">
+  <div class="shot-img">
+    <img src="../images/kristen/shot-02.jpg" width="585" height="877" alt="Suite Reveal — Vertical" loading="lazy" decoding="async">
+  </div>
+  <div class="shot-body">
+    <div class="shot-num">Shot 02 · of 34</div>
+    <h3 class="shot-title">Suite Reveal — Vertical</h3>
+    <p class="shot-desc">Same energy in a vertical crop. Light fixtures and windows kept in frame intentionally — gives the shot scale.</p>
+    <dl class="shot-meta">
+      <div><dt>Framing</dt><dd>Medium-wide vertical</dd></div>
+      <div><dt>Lens · Exposure</dt><dd>35mm · 1/1000s · f/2</dd></div>
+    </dl>
+    <div class="rate" role="group" aria-label="Rate this shot">
+      <button class="r r-love" data-vote="love" type="button" aria-label="Love it">
+        <span class="r-icon">&#9825;</span><span class="r-label">Love it</span>
+      </button>
+      <button class="r r-maybe" data-vote="maybe" type="button" aria-label="Maybe">
+        <span class="r-icon">~</span><span class="r-label">Maybe</span>
+      </button>
+      <button class="r r-skip" data-vote="skip" type="button" aria-label="Skip">
+        <span class="r-icon">&#10005;</span><span class="r-label">Skip</span>
+      </button>
+    </div>
+  </div>
+</article>
+
+
+<article class="shot-card" id="shot-03" data-id="shot-03" data-num="Shot 03" data-title="Quiet Moment — Seated">
+  <div class="shot-img">
+    <img src="../images/kristen/shot-03.jpg" width="609" height="922" alt="Quiet Moment — Seated" loading="lazy" decoding="async">
+  </div>
+  <div class="shot-body">
+    <div class="shot-num">Shot 03 · of 34</div>
+    <h3 class="shot-title">Quiet Moment — Seated</h3>
+    <p class="shot-desc">A softer, closer beat. Hands gathered with the dress, small smile. The kind of frame that ends up being a favorite.</p>
+    <dl class="shot-meta">
+      <div><dt>Framing</dt><dd>Medium portrait</dd></div>
+      <div><dt>Lens · Exposure</dt><dd>50mm · 1/500s · f/2.7</dd></div>
+    </dl>
+    <div class="rate" role="group" aria-label="Rate this shot">
+      <button class="r r-love" data-vote="love" type="button" aria-label="Love it">
+        <span class="r-icon">&#9825;</span><span class="r-label">Love it</span>
+      </button>
+      <button class="r r-maybe" data-vote="maybe" type="button" aria-label="Maybe">
+        <span class="r-icon">~</span><span class="r-label">Maybe</span>
+      </button>
+      <button class="r r-skip" data-vote="skip" type="button" aria-label="Skip">
+        <span class="r-icon">&#10005;</span><span class="r-label">Skip</span>
+      </button>
+    </div>
+  </div>
+</article>
+
+
+<article class="shot-card" id="shot-04" data-id="shot-04" data-num="Shot 04" data-title="Beauty Detail — Hand & Earring">
+  <div class="shot-img">
+    <img src="../images/kristen/shot-04.jpg" width="585" height="878" alt="Beauty Detail — Hand & Earring" loading="lazy" decoding="async">
+  </div>
+  <div class="shot-body">
+    <div class="shot-num">Shot 04 · of 34</div>
+    <h3 class="shot-title">Beauty Detail — Hand & Earring</h3>
+    <p class="shot-desc">Cropped close so the makeup, manicure and earring all read in one frame. Glam captured intentionally, not in passing.</p>
+    <dl class="shot-meta">
+      <div><dt>Framing</dt><dd>Tight beauty close-up</dd></div>
+      <div><dt>Lens · Exposure</dt><dd>85mm · 1/500s · f/2.7</dd></div>
+    </dl>
+    <div class="rate" role="group" aria-label="Rate this shot">
+      <button class="r r-love" data-vote="love" type="button" aria-label="Love it">
+        <span class="r-icon">&#9825;</span><span class="r-label">Love it</span>
+      </button>
+      <button class="r r-maybe" data-vote="maybe" type="button" aria-label="Maybe">
+        <span class="r-icon">~</span><span class="r-label">Maybe</span>
+      </button>
+      <button class="r r-skip" data-vote="skip" type="button" aria-label="Skip">
+        <span class="r-icon">&#10005;</span><span class="r-label">Skip</span>
+      </button>
+    </div>
+  </div>
+</article>
+
+
+<article class="shot-card" id="shot-05" data-id="shot-05" data-num="Shot 05" data-title="Beauty Portrait — Eyes to Camera">
+  <div class="shot-img">
+    <img src="../images/kristen/shot-05.jpg" width="600" height="908" alt="Beauty Portrait — Eyes to Camera" loading="lazy" decoding="async">
+  </div>
+  <div class="shot-body">
+    <div class="shot-num">Shot 05 · of 34</div>
+    <h3 class="shot-title">Beauty Portrait — Eyes to Camera</h3>
+    <p class="shot-desc">Direct, calm portrait — eyes locked into the lens. An anchor frame in the gallery.</p>
+    <dl class="shot-meta">
+      <div><dt>Framing</dt><dd>Tight beauty portrait</dd></div>
+      <div><dt>Lens · Exposure</dt><dd>85mm · 1/800s · f/2</dd></div>
+    </dl>
+    <div class="rate" role="group" aria-label="Rate this shot">
+      <button class="r r-love" data-vote="love" type="button" aria-label="Love it">
+        <span class="r-icon">&#9825;</span><span class="r-label">Love it</span>
+      </button>
+      <button class="r r-maybe" data-vote="maybe" type="button" aria-label="Maybe">
+        <span class="r-icon">~</span><span class="r-label">Maybe</span>
+      </button>
+      <button class="r r-skip" data-vote="skip" type="button" aria-label="Skip">
+        <span class="r-icon">&#10005;</span><span class="r-label">Skip</span>
+      </button>
+    </div>
+  </div>
+</article>
+
+
+<article class="shot-card" id="shot-06" data-id="shot-06" data-num="Shot 06" data-title="Window Light — Vertical">
+  <div class="shot-img">
+    <img src="../images/kristen/shot-06.jpg" width="591" height="890" alt="Window Light — Vertical" loading="lazy" decoding="async">
+  </div>
+  <div class="shot-body">
+    <div class="shot-num">Shot 06 · of 34</div>
+    <h3 class="shot-title">Window Light — Vertical</h3>
+    <p class="shot-desc">Window-side seated portrait. Soft directional light shapes the dress and skin without harshness.</p>
+    <dl class="shot-meta">
+      <div><dt>Framing</dt><dd>Vertical full-body</dd></div>
+      <div><dt>Lens · Exposure</dt><dd>35mm · 1/500s · f/2</dd></div>
+    </dl>
+    <div class="rate" role="group" aria-label="Rate this shot">
+      <button class="r r-love" data-vote="love" type="button" aria-label="Love it">
+        <span class="r-icon">&#9825;</span><span class="r-label">Love it</span>
+      </button>
+      <button class="r r-maybe" data-vote="maybe" type="button" aria-label="Maybe">
+        <span class="r-icon">~</span><span class="r-label">Maybe</span>
+      </button>
+      <button class="r r-skip" data-vote="skip" type="button" aria-label="Skip">
+        <span class="r-icon">&#10005;</span><span class="r-label">Skip</span>
+      </button>
+    </div>
+  </div>
+</article>
+
+
+<article class="shot-card" id="shot-07" data-id="shot-07" data-num="Shot 07" data-title="Through Soft Foreground">
+  <div class="shot-img">
+    <img src="../images/kristen/shot-07.jpg" width="735" height="928" alt="Through Soft Foreground" loading="lazy" decoding="async">
+  </div>
+  <div class="shot-body">
+    <div class="shot-num">Shot 07 · of 34</div>
+    <h3 class="shot-title">Through Soft Foreground</h3>
+    <p class="shot-desc">A foreground element (curtain / fabric / out-of-focus light) softens the edge of frame. Painterly, intentional.</p>
+    <dl class="shot-meta">
+      <div><dt>Framing</dt><dd>Medium with foreground bokeh</dd></div>
+      <div><dt>Lens · Exposure</dt><dd>85mm · 1/640s · f/2.7</dd></div>
+    </dl>
+    <div class="rate" role="group" aria-label="Rate this shot">
+      <button class="r r-love" data-vote="love" type="button" aria-label="Love it">
+        <span class="r-icon">&#9825;</span><span class="r-label">Love it</span>
+      </button>
+      <button class="r r-maybe" data-vote="maybe" type="button" aria-label="Maybe">
+        <span class="r-icon">~</span><span class="r-label">Maybe</span>
+      </button>
+      <button class="r r-skip" data-vote="skip" type="button" aria-label="Skip">
+        <span class="r-icon">&#10005;</span><span class="r-label">Skip</span>
+      </button>
+    </div>
+  </div>
+</article>
+
+
+<article class="shot-card" id="shot-08" data-id="shot-08" data-num="Shot 08" data-title="Editorial — Confident & Wide">
+  <div class="shot-img">
+    <img src="../images/kristen/shot-08.jpg" width="1200" height="630" alt="Editorial — Confident & Wide" loading="lazy" decoding="async">
+  </div>
+  <div class="shot-body">
+    <div class="shot-num">Shot 08 · of 34</div>
+    <h3 class="shot-title">Editorial — Confident & Wide</h3>
+    <p class="shot-desc">Confident, fashion-forward seated wide. Vogue-bridal energy — composed, not posed-stiff.</p>
+    <dl class="shot-meta">
+      <div><dt>Framing</dt><dd>Wide editorial horizontal</dd></div>
+      <div><dt>Lens · Exposure</dt><dd>24–35mm · 1/1000s · f/2</dd></div>
+    </dl>
+    <div class="rate" role="group" aria-label="Rate this shot">
+      <button class="r r-love" data-vote="love" type="button" aria-label="Love it">
+        <span class="r-icon">&#9825;</span><span class="r-label">Love it</span>
+      </button>
+      <button class="r r-maybe" data-vote="maybe" type="button" aria-label="Maybe">
+        <span class="r-icon">~</span><span class="r-label">Maybe</span>
+      </button>
+      <button class="r r-skip" data-vote="skip" type="button" aria-label="Skip">
+        <span class="r-icon">&#10005;</span><span class="r-label">Skip</span>
+      </button>
+    </div>
+  </div>
+</article>
+
+
+<article class="shot-card" id="shot-09" data-id="shot-09" data-num="Shot 09" data-title="Joy — A Real Laugh">
+  <div class="shot-img">
+    <img src="../images/kristen/shot-09.jpg" width="1200" height="801" alt="Joy — A Real Laugh" loading="lazy" decoding="async">
+  </div>
+  <div class="shot-body">
+    <div class="shot-num">Shot 09 · of 34</div>
+    <h3 class="shot-title">Joy — A Real Laugh</h3>
+    <p class="shot-desc">A genuine, mid-laugh frame. The candid that contrasts the editorial frames around it.</p>
+    <dl class="shot-meta">
+      <div><dt>Framing</dt><dd>Medium wide candid</dd></div>
+      <div><dt>Lens · Exposure</dt><dd>35mm · 1/500s · f/2</dd></div>
+    </dl>
+    <div class="rate" role="group" aria-label="Rate this shot">
+      <button class="r r-love" data-vote="love" type="button" aria-label="Love it">
+        <span class="r-icon">&#9825;</span><span class="r-label">Love it</span>
+      </button>
+      <button class="r r-maybe" data-vote="maybe" type="button" aria-label="Maybe">
+        <span class="r-icon">~</span><span class="r-label">Maybe</span>
+      </button>
+      <button class="r r-skip" data-vote="skip" type="button" aria-label="Skip">
+        <span class="r-icon">&#10005;</span><span class="r-label">Skip</span>
+      </button>
+    </div>
+  </div>
+</article>
+
+
+<article class="shot-card" id="shot-10" data-id="shot-10" data-num="Shot 10" data-title="Behind the Scenes — Crew at Work">
+  <div class="shot-img">
+    <img src="../images/kristen/shot-10.jpg" width="1200" height="676" alt="Behind the Scenes — Crew at Work" loading="lazy" decoding="async">
+  </div>
+  <div class="shot-body">
+    <div class="shot-num">Shot 10 · of 34</div>
+    <h3 class="shot-title">Behind the Scenes — Crew at Work</h3>
+    <p class="shot-desc">Documentary BTS frame: bride in the center of the room, the team working around her. A behind-the-curtain frame.</p>
+    <dl class="shot-meta">
+      <div><dt>Framing</dt><dd>Wide BTS</dd></div>
+      <div><dt>Lens · Exposure</dt><dd>24mm · 1/250s · f/2.8</dd></div>
+    </dl>
+    <div class="rate" role="group" aria-label="Rate this shot">
+      <button class="r r-love" data-vote="love" type="button" aria-label="Love it">
+        <span class="r-icon">&#9825;</span><span class="r-label">Love it</span>
+      </button>
+      <button class="r r-maybe" data-vote="maybe" type="button" aria-label="Maybe">
+        <span class="r-icon">~</span><span class="r-label">Maybe</span>
+      </button>
+      <button class="r r-skip" data-vote="skip" type="button" aria-label="Skip">
+        <span class="r-icon">&#10005;</span><span class="r-label">Skip</span>
+      </button>
+    </div>
+  </div>
+</article>
+
+
+<article class="shot-card" id="shot-11" data-id="shot-11" data-num="Shot 11" data-title="Behind the Scenes — Working the Angle">
+  <div class="shot-img">
+    <img src="../images/kristen/shot-11.jpg" width="1200" height="630" alt="Behind the Scenes — Working the Angle" loading="lazy" decoding="async">
+  </div>
+  <div class="shot-body">
+    <div class="shot-num">Shot 11 · of 34</div>
+    <h3 class="shot-title">Behind the Scenes — Working the Angle</h3>
+    <p class="shot-desc">Companion BTS, different beat. Adds movement and storytelling to the gallery.</p>
+    <dl class="shot-meta">
+      <div><dt>Framing</dt><dd>Wide BTS</dd></div>
+      <div><dt>Lens · Exposure</dt><dd>24mm · 1/250s · f/2.8</dd></div>
+    </dl>
+    <div class="rate" role="group" aria-label="Rate this shot">
+      <button class="r r-love" data-vote="love" type="button" aria-label="Love it">
+        <span class="r-icon">&#9825;</span><span class="r-label">Love it</span>
+      </button>
+      <button class="r r-maybe" data-vote="maybe" type="button" aria-label="Maybe">
+        <span class="r-icon">~</span><span class="r-label">Maybe</span>
+      </button>
+      <button class="r r-skip" data-vote="skip" type="button" aria-label="Skip">
+        <span class="r-icon">&#10005;</span><span class="r-label">Skip</span>
+      </button>
+    </div>
+  </div>
+</article>
+
+
+<article class="shot-card" id="shot-12" data-id="shot-12" data-num="Shot 12" data-title="Reflective — Looking Down">
+  <div class="shot-img">
+    <img src="../images/kristen/shot-12.jpg" width="712" height="887" alt="Reflective — Looking Down" loading="lazy" decoding="async">
+  </div>
+  <div class="shot-body">
+    <div class="shot-num">Shot 12 · of 34</div>
+    <h3 class="shot-title">Reflective — Looking Down</h3>
+    <p class="shot-desc">Eyes lowered, quieter energy. The pre-ceremony stillness frame.</p>
+    <dl class="shot-meta">
+      <div><dt>Framing</dt><dd>Vertical medium</dd></div>
+      <div><dt>Lens · Exposure</dt><dd>50mm · 1/1000s · f/2.4</dd></div>
+    </dl>
+    <div class="rate" role="group" aria-label="Rate this shot">
+      <button class="r r-love" data-vote="love" type="button" aria-label="Love it">
+        <span class="r-icon">&#9825;</span><span class="r-label">Love it</span>
+      </button>
+      <button class="r r-maybe" data-vote="maybe" type="button" aria-label="Maybe">
+        <span class="r-icon">~</span><span class="r-label">Maybe</span>
+      </button>
+      <button class="r r-skip" data-vote="skip" type="button" aria-label="Skip">
+        <span class="r-icon">&#10005;</span><span class="r-label">Skip</span>
+      </button>
+    </div>
+  </div>
+</article>
+
+
+<article class="shot-card" id="shot-13" data-id="shot-13" data-num="Shot 13" data-title="Centered Hero — Horizontal">
+  <div class="shot-img">
+    <img src="../images/kristen/shot-13.jpg" width="1200" height="799" alt="Centered Hero — Horizontal" loading="lazy" decoding="async">
+  </div>
+  <div class="shot-body">
+    <div class="shot-num">Shot 13 · of 34</div>
+    <h3 class="shot-title">Centered Hero — Horizontal</h3>
+    <p class="shot-desc">Symmetrical hero frame, dress fanned, bride in the center. Strong, magazine-style composition.</p>
+    <dl class="shot-meta">
+      <div><dt>Framing</dt><dd>Wide hero horizontal</dd></div>
+      <div><dt>Lens · Exposure</dt><dd>35mm · 1/1000s · f/2.3</dd></div>
+    </dl>
+    <div class="rate" role="group" aria-label="Rate this shot">
+      <button class="r r-love" data-vote="love" type="button" aria-label="Love it">
+        <span class="r-icon">&#9825;</span><span class="r-label">Love it</span>
+      </button>
+      <button class="r r-maybe" data-vote="maybe" type="button" aria-label="Maybe">
+        <span class="r-icon">~</span><span class="r-label">Maybe</span>
+      </button>
+      <button class="r r-skip" data-vote="skip" type="button" aria-label="Skip">
+        <span class="r-icon">&#10005;</span><span class="r-label">Skip</span>
+      </button>
+    </div>
+  </div>
+</article>
+
+
+<article class="shot-card" id="shot-14" data-id="shot-14" data-num="Shot 14" data-title="Looser Pose — Vertical">
+  <div class="shot-img">
+    <img src="../images/kristen/shot-14.jpg" width="626" height="919" alt="Looser Pose — Vertical" loading="lazy" decoding="async">
+  </div>
+  <div class="shot-body">
+    <div class="shot-num">Shot 14 · of 34</div>
+    <h3 class="shot-title">Looser Pose — Vertical</h3>
+    <p class="shot-desc">Companion to the centered hero — looser body language, same look. Pairs as a left/right spread.</p>
+    <dl class="shot-meta">
+      <div><dt>Framing</dt><dd>Vertical medium-wide</dd></div>
+      <div><dt>Lens · Exposure</dt><dd>35mm · 1/1000s · f/2.3</dd></div>
+    </dl>
+    <div class="rate" role="group" aria-label="Rate this shot">
+      <button class="r r-love" data-vote="love" type="button" aria-label="Love it">
+        <span class="r-icon">&#9825;</span><span class="r-label">Love it</span>
+      </button>
+      <button class="r r-maybe" data-vote="maybe" type="button" aria-label="Maybe">
+        <span class="r-icon">~</span><span class="r-label">Maybe</span>
+      </button>
+      <button class="r r-skip" data-vote="skip" type="button" aria-label="Skip">
+        <span class="r-icon">&#10005;</span><span class="r-label">Skip</span>
+      </button>
+    </div>
+  </div>
+</article>
+
+
+<article class="shot-card" id="shot-15" data-id="shot-15" data-num="Shot 15" data-title="Bouquet — Profile">
+  <div class="shot-img">
+    <img src="../images/kristen/shot-15.jpg" width="702" height="880" alt="Bouquet — Profile" loading="lazy" decoding="async">
+  </div>
+  <div class="shot-body">
+    <div class="shot-num">Shot 15 · of 34</div>
+    <h3 class="shot-title">Bouquet — Profile</h3>
+    <p class="shot-desc">Profile, holding the bouquet near the face. A classic wedding moment, executed editorially.</p>
+    <dl class="shot-meta">
+      <div><dt>Framing</dt><dd>Vertical portrait</dd></div>
+      <div><dt>Lens · Exposure</dt><dd>85mm · 1/500s · f/2.4</dd></div>
+    </dl>
+    <div class="rate" role="group" aria-label="Rate this shot">
+      <button class="r r-love" data-vote="love" type="button" aria-label="Love it">
+        <span class="r-icon">&#9825;</span><span class="r-label">Love it</span>
+      </button>
+      <button class="r r-maybe" data-vote="maybe" type="button" aria-label="Maybe">
+        <span class="r-icon">~</span><span class="r-label">Maybe</span>
+      </button>
+      <button class="r r-skip" data-vote="skip" type="button" aria-label="Skip">
+        <span class="r-icon">&#10005;</span><span class="r-label">Skip</span>
+      </button>
+    </div>
+  </div>
+</article>
+
+
+<article class="shot-card" id="shot-16" data-id="shot-16" data-num="Shot 16" data-title="Bouquet — Eyes Up">
+  <div class="shot-img">
+    <img src="../images/kristen/shot-16.jpg" width="601" height="911" alt="Bouquet — Eyes Up" loading="lazy" decoding="async">
+  </div>
+  <div class="shot-body">
+    <div class="shot-num">Shot 16 · of 34</div>
+    <h3 class="shot-title">Bouquet — Eyes Up</h3>
+    <p class="shot-desc">Bouquet held, eyes flicked toward camera. The slow-burn portrait many brides end up framing.</p>
+    <dl class="shot-meta">
+      <div><dt>Framing</dt><dd>Vertical close portrait</dd></div>
+      <div><dt>Lens · Exposure</dt><dd>85mm · 1/500s · f/2.4</dd></div>
+    </dl>
+    <div class="rate" role="group" aria-label="Rate this shot">
+      <button class="r r-love" data-vote="love" type="button" aria-label="Love it">
+        <span class="r-icon">&#9825;</span><span class="r-label">Love it</span>
+      </button>
+      <button class="r r-maybe" data-vote="maybe" type="button" aria-label="Maybe">
+        <span class="r-icon">~</span><span class="r-label">Maybe</span>
+      </button>
+      <button class="r r-skip" data-vote="skip" type="button" aria-label="Skip">
+        <span class="r-icon">&#10005;</span><span class="r-label">Skip</span>
+      </button>
+    </div>
+  </div>
+</article>
+
+
+<article class="shot-card" id="shot-17" data-id="shot-17" data-num="Shot 17" data-title="Mirror — Two of Her">
+  <div class="shot-img">
+    <img src="../images/kristen/shot-17.jpg" width="710" height="889" alt="Mirror — Two of Her" loading="lazy" decoding="async">
+  </div>
+  <div class="shot-body">
+    <div class="shot-num">Shot 17 · of 34</div>
+    <h3 class="shot-title">Mirror — Two of Her</h3>
+    <p class="shot-desc">Bride and her reflection in one frame. Symbolic, design-forward — adds variety to the gallery.</p>
+    <dl class="shot-meta">
+      <div><dt>Framing</dt><dd>Vertical environmental</dd></div>
+      <div><dt>Lens · Exposure</dt><dd>35mm · 1/250s · f/2.4</dd></div>
+    </dl>
+    <div class="rate" role="group" aria-label="Rate this shot">
+      <button class="r r-love" data-vote="love" type="button" aria-label="Love it">
+        <span class="r-icon">&#9825;</span><span class="r-label">Love it</span>
+      </button>
+      <button class="r r-maybe" data-vote="maybe" type="button" aria-label="Maybe">
+        <span class="r-icon">~</span><span class="r-label">Maybe</span>
+      </button>
+      <button class="r r-skip" data-vote="skip" type="button" aria-label="Skip">
+        <span class="r-icon">&#10005;</span><span class="r-label">Skip</span>
+      </button>
+    </div>
+  </div>
+</article>
+
+
+<article class="shot-card" id="shot-18" data-id="shot-18" data-num="Shot 18" data-title="Curtain Light — Hand to Sheer">
+  <div class="shot-img">
+    <img src="../images/kristen/shot-18.jpg" width="591" height="885" alt="Curtain Light — Hand to Sheer" loading="lazy" decoding="async">
+  </div>
+  <div class="shot-body">
+    <div class="shot-num">Shot 18 · of 34</div>
+    <h3 class="shot-title">Curtain Light — Hand to Sheer</h3>
+    <p class="shot-desc">Bride at the window, hand reaching to the sheer curtain. Backlight glows through fabric.</p>
+    <dl class="shot-meta">
+      <div><dt>Framing</dt><dd>Vertical 3/4 length</dd></div>
+      <div><dt>Lens · Exposure</dt><dd>50mm · 1/800s · f/2.4</dd></div>
+    </dl>
+    <div class="rate" role="group" aria-label="Rate this shot">
+      <button class="r r-love" data-vote="love" type="button" aria-label="Love it">
+        <span class="r-icon">&#9825;</span><span class="r-label">Love it</span>
+      </button>
+      <button class="r r-maybe" data-vote="maybe" type="button" aria-label="Maybe">
+        <span class="r-icon">~</span><span class="r-label">Maybe</span>
+      </button>
+      <button class="r r-skip" data-vote="skip" type="button" aria-label="Skip">
+        <span class="r-icon">&#10005;</span><span class="r-label">Skip</span>
+      </button>
+    </div>
+  </div>
+</article>
+
+
+<article class="shot-card" id="shot-19" data-id="shot-19" data-num="Shot 19" data-title="Curtain Light — Standing Wide">
+  <div class="shot-img">
+    <img src="../images/kristen/shot-19.jpg" width="613" height="918" alt="Curtain Light — Standing Wide" loading="lazy" decoding="async">
+  </div>
+  <div class="shot-body">
+    <div class="shot-num">Shot 19 · of 34</div>
+    <h3 class="shot-title">Curtain Light — Standing Wide</h3>
+    <p class="shot-desc">Companion frame to the curtain reach, full-length. Light pours through the window.</p>
+    <dl class="shot-meta">
+      <div><dt>Framing</dt><dd>Vertical full-length</dd></div>
+      <div><dt>Lens · Exposure</dt><dd>50mm · 1/1250s · f/2</dd></div>
+    </dl>
+    <div class="rate" role="group" aria-label="Rate this shot">
+      <button class="r r-love" data-vote="love" type="button" aria-label="Love it">
+        <span class="r-icon">&#9825;</span><span class="r-label">Love it</span>
+      </button>
+      <button class="r r-maybe" data-vote="maybe" type="button" aria-label="Maybe">
+        <span class="r-icon">~</span><span class="r-label">Maybe</span>
+      </button>
+      <button class="r r-skip" data-vote="skip" type="button" aria-label="Skip">
+        <span class="r-icon">&#10005;</span><span class="r-label">Skip</span>
+      </button>
+    </div>
+  </div>
+</article>
+
+
+<article class="shot-card" id="shot-20" data-id="shot-20" data-num="Shot 20" data-title="Over the Shoulder">
+  <div class="shot-img">
+    <img src="../images/kristen/shot-20.jpg" width="717" height="895" alt="Over the Shoulder" loading="lazy" decoding="async">
+  </div>
+  <div class="shot-body">
+    <div class="shot-num">Shot 20 · of 34</div>
+    <h3 class="shot-title">Over the Shoulder</h3>
+    <p class="shot-desc">Back-of-dress detail, bride glancing back over her shoulder. Earrings, neckline, skin all read.</p>
+    <dl class="shot-meta">
+      <div><dt>Framing</dt><dd>Vertical medium</dd></div>
+      <div><dt>Lens · Exposure</dt><dd>85mm · 1/1250s · f/2</dd></div>
+    </dl>
+    <div class="rate" role="group" aria-label="Rate this shot">
+      <button class="r r-love" data-vote="love" type="button" aria-label="Love it">
+        <span class="r-icon">&#9825;</span><span class="r-label">Love it</span>
+      </button>
+      <button class="r r-maybe" data-vote="maybe" type="button" aria-label="Maybe">
+        <span class="r-icon">~</span><span class="r-label">Maybe</span>
+      </button>
+      <button class="r r-skip" data-vote="skip" type="button" aria-label="Skip">
+        <span class="r-icon">&#10005;</span><span class="r-label">Skip</span>
+      </button>
+    </div>
+  </div>
+</article>
+
+
+<article class="shot-card" id="shot-21" data-id="shot-21" data-num="Shot 21" data-title="The Dress — Standing Reveal">
+  <div class="shot-img">
+    <img src="../images/kristen/shot-21.jpg" width="587" height="884" alt="The Dress — Standing Reveal" loading="lazy" decoding="async">
+  </div>
+  <div class="shot-body">
+    <div class="shot-num">Shot 21 · of 34</div>
+    <h3 class="shot-title">The Dress — Standing Reveal</h3>
+    <p class="shot-desc">Bride in the dress, standing by the window. Architectural light. The dress gets its own portrait.</p>
+    <dl class="shot-meta">
+      <div><dt>Framing</dt><dd>Vertical full-length</dd></div>
+      <div><dt>Lens · Exposure</dt><dd>50mm · 1/3200s · f/2</dd></div>
+    </dl>
+    <div class="rate" role="group" aria-label="Rate this shot">
+      <button class="r r-love" data-vote="love" type="button" aria-label="Love it">
+        <span class="r-icon">&#9825;</span><span class="r-label">Love it</span>
+      </button>
+      <button class="r r-maybe" data-vote="maybe" type="button" aria-label="Maybe">
+        <span class="r-icon">~</span><span class="r-label">Maybe</span>
+      </button>
+      <button class="r r-skip" data-vote="skip" type="button" aria-label="Skip">
+        <span class="r-icon">&#10005;</span><span class="r-label">Skip</span>
+      </button>
+    </div>
+  </div>
+</article>
+
+
+<article class="shot-card" id="shot-22" data-id="shot-22" data-num="Shot 22" data-title="Curtains Open — Back of Dress">
+  <div class="shot-img">
+    <img src="../images/kristen/shot-22.jpg" width="1200" height="801" alt="Curtains Open — Back of Dress" loading="lazy" decoding="async">
+  </div>
+  <div class="shot-body">
+    <div class="shot-num">Shot 22 · of 34</div>
+    <h3 class="shot-title">Curtains Open — Back of Dress</h3>
+    <p class="shot-desc">Bride from behind, both hands parting the curtains. Lets the back of the dress speak.</p>
+    <dl class="shot-meta">
+      <div><dt>Framing</dt><dd>Wide back view</dd></div>
+      <div><dt>Lens · Exposure</dt><dd>35mm · 1/1250s · f/2.5</dd></div>
+    </dl>
+    <div class="rate" role="group" aria-label="Rate this shot">
+      <button class="r r-love" data-vote="love" type="button" aria-label="Love it">
+        <span class="r-icon">&#9825;</span><span class="r-label">Love it</span>
+      </button>
+      <button class="r r-maybe" data-vote="maybe" type="button" aria-label="Maybe">
+        <span class="r-icon">~</span><span class="r-label">Maybe</span>
+      </button>
+      <button class="r r-skip" data-vote="skip" type="button" aria-label="Skip">
+        <span class="r-icon">&#10005;</span><span class="r-label">Skip</span>
+      </button>
+    </div>
+  </div>
+</article>
+
+
+<article class="shot-card" id="shot-23" data-id="shot-23" data-num="Shot 23" data-title="Wide Back — Cinematic">
+  <div class="shot-img">
+    <img src="../images/kristen/shot-23.jpg" width="606" height="908" alt="Wide Back — Cinematic" loading="lazy" decoding="async">
+  </div>
+  <div class="shot-body">
+    <div class="shot-num">Shot 23 · of 34</div>
+    <h3 class="shot-title">Wide Back — Cinematic</h3>
+    <p class="shot-desc">Wide back view with the room as context. Cinematic, story-feeling.</p>
+    <dl class="shot-meta">
+      <div><dt>Framing</dt><dd>Vertical wide</dd></div>
+      <div><dt>Lens · Exposure</dt><dd>35mm · 1/1600s · f/2</dd></div>
+    </dl>
+    <div class="rate" role="group" aria-label="Rate this shot">
+      <button class="r r-love" data-vote="love" type="button" aria-label="Love it">
+        <span class="r-icon">&#9825;</span><span class="r-label">Love it</span>
+      </button>
+      <button class="r r-maybe" data-vote="maybe" type="button" aria-label="Maybe">
+        <span class="r-icon">~</span><span class="r-label">Maybe</span>
+      </button>
+      <button class="r r-skip" data-vote="skip" type="button" aria-label="Skip">
+        <span class="r-icon">&#10005;</span><span class="r-label">Skip</span>
+      </button>
+    </div>
+  </div>
+</article>
+
+
+<article class="shot-card" id="shot-24" data-id="shot-24" data-num="Shot 24" data-title="Black & White — Profile">
+  <div class="shot-img">
+    <img src="../images/kristen/shot-24.jpg" width="588" height="884" alt="Black & White — Profile" loading="lazy" decoding="async">
+  </div>
+  <div class="shot-body">
+    <div class="shot-num">Shot 24 · of 34</div>
+    <h3 class="shot-title">Black & White — Profile</h3>
+    <p class="shot-desc">Black-and-white profile portrait. Timeless — every gallery should have one.</p>
+    <dl class="shot-meta">
+      <div><dt>Framing</dt><dd>Vertical portrait (B&W)</dd></div>
+      <div><dt>Lens · Exposure</dt><dd>85mm · 1/1600s · f/2.4</dd></div>
+    </dl>
+    <div class="rate" role="group" aria-label="Rate this shot">
+      <button class="r r-love" data-vote="love" type="button" aria-label="Love it">
+        <span class="r-icon">&#9825;</span><span class="r-label">Love it</span>
+      </button>
+      <button class="r r-maybe" data-vote="maybe" type="button" aria-label="Maybe">
+        <span class="r-icon">~</span><span class="r-label">Maybe</span>
+      </button>
+      <button class="r r-skip" data-vote="skip" type="button" aria-label="Skip">
+        <span class="r-icon">&#10005;</span><span class="r-label">Skip</span>
+      </button>
+    </div>
+  </div>
+</article>
+
+
+<article class="shot-card" id="shot-25" data-id="shot-25" data-num="Shot 25" data-title="Standing — Quiet Composure">
+  <div class="shot-img">
+    <img src="../images/kristen/shot-25.jpg" width="707" height="883" alt="Standing — Quiet Composure" loading="lazy" decoding="async">
+  </div>
+  <div class="shot-body">
+    <div class="shot-num">Shot 25 · of 34</div>
+    <h3 class="shot-title">Standing — Quiet Composure</h3>
+    <p class="shot-desc">Vertical full-length facing window light. Quiet, composed, ready.</p>
+    <dl class="shot-meta">
+      <div><dt>Framing</dt><dd>Vertical full-length</dd></div>
+      <div><dt>Lens · Exposure</dt><dd>50mm · 1/1600s · f/2</dd></div>
+    </dl>
+    <div class="rate" role="group" aria-label="Rate this shot">
+      <button class="r r-love" data-vote="love" type="button" aria-label="Love it">
+        <span class="r-icon">&#9825;</span><span class="r-label">Love it</span>
+      </button>
+      <button class="r r-maybe" data-vote="maybe" type="button" aria-label="Maybe">
+        <span class="r-icon">~</span><span class="r-label">Maybe</span>
+      </button>
+      <button class="r r-skip" data-vote="skip" type="button" aria-label="Skip">
+        <span class="r-icon">&#10005;</span><span class="r-label">Skip</span>
+      </button>
+    </div>
+  </div>
+</article>
+
+
+<article class="shot-card" id="shot-26" data-id="shot-26" data-num="Shot 26" data-title="Veil On — First Look at the Mirror">
+  <div class="shot-img">
+    <img src="../images/kristen/shot-26.jpg" width="715" height="892" alt="Veil On — First Look at the Mirror" loading="lazy" decoding="async">
+  </div>
+  <div class="shot-body">
+    <div class="shot-num">Shot 26 · of 34</div>
+    <h3 class="shot-title">Veil On — First Look at the Mirror</h3>
+    <p class="shot-desc">Veil placed, bride sees herself for the first time. The catch-the-breath frame.</p>
+    <dl class="shot-meta">
+      <div><dt>Framing</dt><dd>Vertical portrait</dd></div>
+      <div><dt>Lens · Exposure</dt><dd>85mm · 1/320s · f/2.4</dd></div>
+    </dl>
+    <div class="rate" role="group" aria-label="Rate this shot">
+      <button class="r r-love" data-vote="love" type="button" aria-label="Love it">
+        <span class="r-icon">&#9825;</span><span class="r-label">Love it</span>
+      </button>
+      <button class="r r-maybe" data-vote="maybe" type="button" aria-label="Maybe">
+        <span class="r-icon">~</span><span class="r-label">Maybe</span>
+      </button>
+      <button class="r r-skip" data-vote="skip" type="button" aria-label="Skip">
+        <span class="r-icon">&#10005;</span><span class="r-label">Skip</span>
+      </button>
+    </div>
+  </div>
+</article>
+
+
+<article class="shot-card" id="shot-27" data-id="shot-27" data-num="Shot 27" data-title="Veil — Hand Near Lace">
+  <div class="shot-img">
+    <img src="../images/kristen/shot-27.jpg" width="714" height="894" alt="Veil — Hand Near Lace" loading="lazy" decoding="async">
+  </div>
+  <div class="shot-body">
+    <div class="shot-num">Shot 27 · of 34</div>
+    <h3 class="shot-title">Veil — Hand Near Lace</h3>
+    <p class="shot-desc">Hand framing the veil near the cheek. Catalog-quality bridal beauty.</p>
+    <dl class="shot-meta">
+      <div><dt>Framing</dt><dd>Tight portrait</dd></div>
+      <div><dt>Lens · Exposure</dt><dd>85mm · 1/320s · f/2.4</dd></div>
+    </dl>
+    <div class="rate" role="group" aria-label="Rate this shot">
+      <button class="r r-love" data-vote="love" type="button" aria-label="Love it">
+        <span class="r-icon">&#9825;</span><span class="r-label">Love it</span>
+      </button>
+      <button class="r r-maybe" data-vote="maybe" type="button" aria-label="Maybe">
+        <span class="r-icon">~</span><span class="r-label">Maybe</span>
+      </button>
+      <button class="r r-skip" data-vote="skip" type="button" aria-label="Skip">
+        <span class="r-icon">&#10005;</span><span class="r-label">Skip</span>
+      </button>
+    </div>
+  </div>
+</article>
+
+
+<article class="shot-card" id="shot-28" data-id="shot-28" data-num="Shot 28" data-title="Veil + Bouquet — B&W">
+  <div class="shot-img">
+    <img src="../images/kristen/shot-28.jpg" width="729" height="907" alt="Veil + Bouquet — B&W" loading="lazy" decoding="async">
+  </div>
+  <div class="shot-body">
+    <div class="shot-num">Shot 28 · of 34</div>
+    <h3 class="shot-title">Veil + Bouquet — B&W</h3>
+    <p class="shot-desc">Black-and-white. Bouquet pulled to face, veil draped. Editorial, romantic, timeless.</p>
+    <dl class="shot-meta">
+      <div><dt>Framing</dt><dd>Vertical portrait (B&W)</dd></div>
+      <div><dt>Lens · Exposure</dt><dd>85mm · 1/200s · f/2.8</dd></div>
+    </dl>
+    <div class="rate" role="group" aria-label="Rate this shot">
+      <button class="r r-love" data-vote="love" type="button" aria-label="Love it">
+        <span class="r-icon">&#9825;</span><span class="r-label">Love it</span>
+      </button>
+      <button class="r r-maybe" data-vote="maybe" type="button" aria-label="Maybe">
+        <span class="r-icon">~</span><span class="r-label">Maybe</span>
+      </button>
+      <button class="r r-skip" data-vote="skip" type="button" aria-label="Skip">
+        <span class="r-icon">&#10005;</span><span class="r-label">Skip</span>
+      </button>
+    </div>
+  </div>
+</article>
+
+
+<article class="shot-card" id="shot-29" data-id="shot-29" data-num="Shot 29" data-title="Floral Backdrop — Full Look">
+  <div class="shot-img">
+    <img src="../images/kristen/shot-29.jpg" width="709" height="885" alt="Floral Backdrop — Full Look" loading="lazy" decoding="async">
+  </div>
+  <div class="shot-body">
+    <div class="shot-num">Shot 29 · of 34</div>
+    <h3 class="shot-title">Floral Backdrop — Full Look</h3>
+    <p class="shot-desc">Full ceremony look photographed at a floral installation. Hero environmental portrait.</p>
+    <dl class="shot-meta">
+      <div><dt>Framing</dt><dd>Vertical environmental</dd></div>
+      <div><dt>Lens · Exposure</dt><dd>50mm · 1/200s · f/4</dd></div>
+    </dl>
+    <div class="rate" role="group" aria-label="Rate this shot">
+      <button class="r r-love" data-vote="love" type="button" aria-label="Love it">
+        <span class="r-icon">&#9825;</span><span class="r-label">Love it</span>
+      </button>
+      <button class="r r-maybe" data-vote="maybe" type="button" aria-label="Maybe">
+        <span class="r-icon">~</span><span class="r-label">Maybe</span>
+      </button>
+      <button class="r r-skip" data-vote="skip" type="button" aria-label="Skip">
+        <span class="r-icon">&#10005;</span><span class="r-label">Skip</span>
+      </button>
+    </div>
+  </div>
+</article>
+
+
+<article class="shot-card" id="shot-30" data-id="shot-30" data-num="Shot 30" data-title="Floral Backdrop — Centered">
+  <div class="shot-img">
+    <img src="../images/kristen/shot-30.jpg" width="705" height="886" alt="Floral Backdrop — Centered" loading="lazy" decoding="async">
+  </div>
+  <div class="shot-body">
+    <div class="shot-num">Shot 30 · of 34</div>
+    <h3 class="shot-title">Floral Backdrop — Centered</h3>
+    <p class="shot-desc">Centered, symmetrical version of the floral-backdrop frame. Different framing, same setup.</p>
+    <dl class="shot-meta">
+      <div><dt>Framing</dt><dd>Vertical environmental</dd></div>
+      <div><dt>Lens · Exposure</dt><dd>50mm · 1/200s · f/4</dd></div>
+    </dl>
+    <div class="rate" role="group" aria-label="Rate this shot">
+      <button class="r r-love" data-vote="love" type="button" aria-label="Love it">
+        <span class="r-icon">&#9825;</span><span class="r-label">Love it</span>
+      </button>
+      <button class="r r-maybe" data-vote="maybe" type="button" aria-label="Maybe">
+        <span class="r-icon">~</span><span class="r-label">Maybe</span>
+      </button>
+      <button class="r r-skip" data-vote="skip" type="button" aria-label="Skip">
+        <span class="r-icon">&#10005;</span><span class="r-label">Skip</span>
+      </button>
+    </div>
+  </div>
+</article>
+
+
+<article class="shot-card" id="shot-31" data-id="shot-31" data-num="Shot 31" data-title="Couple — On the Move">
+  <div class="shot-img">
+    <img src="../images/kristen/shot-31.jpg" width="712" height="893" alt="Couple — On the Move" loading="lazy" decoding="async">
+  </div>
+  <div class="shot-body">
+    <div class="shot-num">Shot 31 · of 34</div>
+    <h3 class="shot-title">Couple — On the Move</h3>
+    <p class="shot-desc">Couple walking together, bride on his arm. Storytelling — captures movement and connection.</p>
+    <dl class="shot-meta">
+      <div><dt>Framing</dt><dd>Wide vertical couple</dd></div>
+      <div><dt>Lens · Exposure</dt><dd>35mm · 1/200s · f/2</dd></div>
+    </dl>
+    <div class="rate" role="group" aria-label="Rate this shot">
+      <button class="r r-love" data-vote="love" type="button" aria-label="Love it">
+        <span class="r-icon">&#9825;</span><span class="r-label">Love it</span>
+      </button>
+      <button class="r r-maybe" data-vote="maybe" type="button" aria-label="Maybe">
+        <span class="r-icon">~</span><span class="r-label">Maybe</span>
+      </button>
+      <button class="r r-skip" data-vote="skip" type="button" aria-label="Skip">
+        <span class="r-icon">&#10005;</span><span class="r-label">Skip</span>
+      </button>
+    </div>
+  </div>
+</article>
+
+
+<article class="shot-card" id="shot-32" data-id="shot-32" data-num="Shot 32" data-title="Dress Detail — Bodice">
+  <div class="shot-img">
+    <img src="../images/kristen/shot-32.jpg" width="714" height="896" alt="Dress Detail — Bodice" loading="lazy" decoding="async">
+  </div>
+  <div class="shot-body">
+    <div class="shot-num">Shot 32 · of 34</div>
+    <h3 class="shot-title">Dress Detail — Bodice</h3>
+    <p class="shot-desc">Cropped detail of the bodice / lacework. Pairs with rings, florals, shoes as detail spreads.</p>
+    <dl class="shot-meta">
+      <div><dt>Framing</dt><dd>Tight detail</dd></div>
+      <div><dt>Lens · Exposure</dt><dd>85mm · 1/200s · f/2.4</dd></div>
+    </dl>
+    <div class="rate" role="group" aria-label="Rate this shot">
+      <button class="r r-love" data-vote="love" type="button" aria-label="Love it">
+        <span class="r-icon">&#9825;</span><span class="r-label">Love it</span>
+      </button>
+      <button class="r r-maybe" data-vote="maybe" type="button" aria-label="Maybe">
+        <span class="r-icon">~</span><span class="r-label">Maybe</span>
+      </button>
+      <button class="r r-skip" data-vote="skip" type="button" aria-label="Skip">
+        <span class="r-icon">&#10005;</span><span class="r-label">Skip</span>
+      </button>
+    </div>
+  </div>
+</article>
+
+
+<article class="shot-card" id="shot-33" data-id="shot-33" data-num="Shot 33" data-title="Couple — Cheek to Cheek">
+  <div class="shot-img">
+    <img src="../images/kristen/shot-33.jpg" width="717" height="902" alt="Couple — Cheek to Cheek" loading="lazy" decoding="async">
+  </div>
+  <div class="shot-body">
+    <div class="shot-num">Shot 33 · of 34</div>
+    <h3 class="shot-title">Couple — Cheek to Cheek</h3>
+    <p class="shot-desc">Couple close, bouquet between them. Warm, lit, intentional — not a 'lean in' direction.</p>
+    <dl class="shot-meta">
+      <div><dt>Framing</dt><dd>Vertical close couple</dd></div>
+      <div><dt>Lens · Exposure</dt><dd>50mm · 1/200s · f/2.4</dd></div>
+    </dl>
+    <div class="rate" role="group" aria-label="Rate this shot">
+      <button class="r r-love" data-vote="love" type="button" aria-label="Love it">
+        <span class="r-icon">&#9825;</span><span class="r-label">Love it</span>
+      </button>
+      <button class="r r-maybe" data-vote="maybe" type="button" aria-label="Maybe">
+        <span class="r-icon">~</span><span class="r-label">Maybe</span>
+      </button>
+      <button class="r r-skip" data-vote="skip" type="button" aria-label="Skip">
+        <span class="r-icon">&#10005;</span><span class="r-label">Skip</span>
+      </button>
+    </div>
+  </div>
+</article>
+
+
+<article class="shot-card" id="shot-34" data-id="shot-34" data-num="Shot 34" data-title="Couple — The Portrait">
+  <div class="shot-img">
+    <img src="../images/kristen/shot-34.jpg" width="722" height="901" alt="Couple — The Portrait" loading="lazy" decoding="async">
+  </div>
+  <div class="shot-body">
+    <div class="shot-num">Shot 34 · of 34</div>
+    <h3 class="shot-title">Couple — The Portrait</h3>
+    <p class="shot-desc">Full-length couple portrait. The frame couples tend to hang on the wall.</p>
+    <dl class="shot-meta">
+      <div><dt>Framing</dt><dd>Vertical wide couple</dd></div>
+      <div><dt>Lens · Exposure</dt><dd>35mm · 1/200s · f/2.4</dd></div>
+    </dl>
+    <div class="rate" role="group" aria-label="Rate this shot">
+      <button class="r r-love" data-vote="love" type="button" aria-label="Love it">
+        <span class="r-icon">&#9825;</span><span class="r-label">Love it</span>
+      </button>
+      <button class="r r-maybe" data-vote="maybe" type="button" aria-label="Maybe">
+        <span class="r-icon">~</span><span class="r-label">Maybe</span>
+      </button>
+      <button class="r r-skip" data-vote="skip" type="button" aria-label="Skip">
+        <span class="r-icon">&#10005;</span><span class="r-label">Skip</span>
+      </button>
+    </div>
+  </div>
+</article>
+
+</main>
+
+<footer class="footer">
+  <div class="footer-brand">MARCUS JERIDO</div>
+  <div class="footer-tag">TRD Media Group · trdmediagrp.com</div>
+</footer>
+
+<!-- Sticky summary bar -->
+<div class="sumbar" id="sumbar">
+  <div class="counts">
+    <div><span class="dot love"></span><strong id="cLove">0</strong>Love</div>
+    <div><span class="dot maybe"></span><strong id="cMaybe">0</strong>Maybe</div>
+    <div><span class="dot skip"></span><strong id="cSkip">0</strong>Skip</div>
+    <div><strong id="cTotal">0</strong>/ 34 rated</div>
+  </div>
+  <div class="actions">
+    <button type="button" id="btnReset" class="ghost">Reset</button>
+    <button type="button" id="btnSend" class="primary">Send My Picks</button>
+  </div>
+</div>
+
+<!-- Submit modal -->
+<div class="modal-bg" id="modalBg">
+  <div class="modal">
+    <button type="button" class="close" id="modalClose" aria-label="Close">&times;</button>
+    <h3>Send my picks</h3>
+    <p class="modal-sub">This goes straight to Marcus's inbox. Add a note if you want to call out anything specific.</p>
+
+    <label for="fName">Your name</label>
+    <input type="text" id="fName" autocomplete="name" placeholder="Kristen Malone">
+
+    <label for="fContact">Email or phone (optional)</label>
+    <input type="text" id="fContact" placeholder="So Marcus can reply">
+
+    <label for="fNote">Notes for Marcus (optional)</label>
+    <textarea id="fNote" placeholder="Anything you want me to know — must-have shots, things to avoid, vibe checks…"></textarea>
+
+    <div class="summary-preview" id="summaryPreview"></div>
+
+    <div class="modal-actions">
+      <button type="button" id="btnSubmit" class="primary">Send to Marcus</button>
+      <button type="button" id="btnCopy">Copy Summary</button>
+    </div>
+
+    <div class="toast" id="toast"></div>
+  </div>
+</div>
+
+<!-- Lightbox -->
+<div class="lb" id="lb"><img id="lbImg" src="" alt=""></div>
+
+<script>
+(function () {
+  const ACCESS_TOKEN = 'malone-2026';
+  const API_URL = 'https://portfolio-notify.vercel.app/api/picks';
+  const STORAGE_KEY = 'malone-picks-v1';
+  const TOTAL = 34;
+
+  // Soft gate: hide content if URL has no ?k= match
+  const params = new URLSearchParams(location.search);
+  const owner = params.has('owner');
+  const tokenOk = owner || params.get('k') === ACCESS_TOKEN;
+  if (!tokenOk) {
+    document.body.style.overflow = 'hidden';
+    document.getElementById('gate').style.display = 'flex';
+    return;
+  }
+
+  function loadPicks() {
+    try { return JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}'); }
+    catch (_) { return {}; }
+  }
+  function savePicks(p) { localStorage.setItem(STORAGE_KEY, JSON.stringify(p)); }
+  let picks = loadPicks();
+
+  function rebuildLists() {
+    const buckets = { love: [], maybe: [], skip: [] };
+    document.querySelectorAll('.shot-card').forEach(card => {
+      const v = picks[card.dataset.id];
+      if (!v) return;
+      buckets[v].push({ num: card.dataset.num, title: card.dataset.title });
+    });
+    return buckets;
+  }
+
+  function applyState() {
+    document.querySelectorAll('.shot-card').forEach(card => {
+      const id = card.dataset.id;
+      const vote = picks[id] || '';
+      card.dataset.vote = vote;
+      card.querySelectorAll('.r').forEach(b => {
+        b.classList.toggle('active', b.dataset.vote === vote);
+      });
+    });
+    const b = rebuildLists();
+    document.getElementById('cLove').textContent = b.love.length;
+    document.getElementById('cMaybe').textContent = b.maybe.length;
+    document.getElementById('cSkip').textContent = b.skip.length;
+    document.getElementById('cTotal').textContent = b.love.length + b.maybe.length + b.skip.length;
+  }
+
+  document.querySelectorAll('.shot-card').forEach(card => {
+    card.querySelectorAll('.r').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const id = card.dataset.id;
+        const vote = btn.dataset.vote;
+        if (picks[id] === vote) delete picks[id];
+        else picks[id] = vote;
+        savePicks(picks);
+        applyState();
+      });
+    });
+    // Lightbox on image click
+    card.querySelector('.shot-img').addEventListener('click', () => {
+      const img = card.querySelector('.shot-img img');
+      const lb = document.getElementById('lb');
+      document.getElementById('lbImg').src = img.src;
+      lb.classList.add('open');
+    });
+  });
+
+  document.getElementById('lb').addEventListener('click', () =>
+    document.getElementById('lb').classList.remove('open'));
+
+  document.getElementById('btnReset').addEventListener('click', () => {
+    if (!confirm('Clear all your ratings?')) return;
+    picks = {};
+    savePicks(picks);
+    applyState();
+  });
+
+  function buildSummary() {
+    const b = rebuildLists();
+    const fmt = (arr) => arr.length ? arr.map(x => `  ${x.num} — ${x.title}`).join('\n') : '  (none)';
+    const rated = b.love.length + b.maybe.length + b.skip.length;
+    return [
+      `LOVE IT (${b.love.length})`, fmt(b.love), '',
+      `MAYBE (${b.maybe.length})`, fmt(b.maybe), '',
+      `SKIP (${b.skip.length})`, fmt(b.skip), '',
+      `Rated: ${rated} / ${TOTAL}`,
+    ].join('\n');
+  }
+
+  const modalBg = document.getElementById('modalBg');
+  const toast = document.getElementById('toast');
+
+  document.getElementById('btnSend').addEventListener('click', () => {
+    document.getElementById('summaryPreview').textContent = buildSummary();
+    toast.classList.remove('show', 'error');
+    toast.textContent = '';
+    modalBg.classList.add('open');
+  });
+  document.getElementById('modalClose').addEventListener('click', () => modalBg.classList.remove('open'));
+  modalBg.addEventListener('click', (e) => { if (e.target === modalBg) modalBg.classList.remove('open'); });
+
+  document.getElementById('btnCopy').addEventListener('click', async () => {
+    const text = buildSummary();
+    try {
+      await navigator.clipboard.writeText(text);
+      toast.textContent = 'Summary copied to clipboard.';
+      toast.classList.remove('error'); toast.classList.add('show');
+    } catch (_) {
+      toast.textContent = 'Couldn\'t copy automatically. Select the summary above and copy manually.';
+      toast.classList.add('show', 'error');
+    }
+  });
+
+  document.getElementById('btnSubmit').addEventListener('click', async () => {
+    const submitBtn = document.getElementById('btnSubmit');
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Sending…';
+    toast.classList.remove('show', 'error');
+
+    const b = rebuildLists();
+    const name = document.getElementById('fName').value.trim();
+    const note = document.getElementById('fNote').value.trim();
+    const contact = document.getElementById('fContact').value.trim();
+    const client = name ? `Kristen Malone (${name})` : 'Kristen Malone';
+
+    try {
+      const r = await fetch(API_URL, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          client, eventType: 'submit',
+          love: b.love, maybe: b.maybe, skip: b.skip,
+          total: TOTAL, note, contact,
+        }),
+      });
+      if (!r.ok) throw new Error('HTTP ' + r.status);
+      toast.textContent = 'Sent! Marcus will see your picks shortly. You can close this page.';
+      toast.classList.add('show');
+      submitBtn.textContent = 'Sent ✓';
+    } catch (err) {
+      submitBtn.disabled = false;
+      submitBtn.textContent = 'Send to Marcus';
+      toast.textContent = 'Couldn\'t send right now. Hit "Copy Summary" instead and email it to marcus.jerido@gmail.com — your picks are still saved here.';
+      toast.classList.add('show', 'error');
+    }
+  });
+
+  // Idle autosave: 90s after the last rating change with unsaved changes,
+  // fire one background email so partial picks aren't lost.
+  let lastSent = '';
+  let idleTimer = null;
+  function scheduleAutosave() {
+    clearTimeout(idleTimer);
+    idleTimer = setTimeout(async () => {
+      const sig = JSON.stringify(picks);
+      if (sig === lastSent || Object.keys(picks).length === 0) return;
+      const b = rebuildLists();
+      try {
+        const r = await fetch(API_URL, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            client: 'Kristen Malone (autosave)', eventType: 'autosave',
+            love: b.love, maybe: b.maybe, skip: b.skip, total: TOTAL,
+          }),
+        });
+        if (r.ok) lastSent = sig;
+      } catch (_) { /* silent */ }
+    }, 90000);
+  }
+  document.querySelectorAll('.r').forEach(btn => btn.addEventListener('click', scheduleAutosave));
+
+  applyState();
+})();
+</script>
+
+</body>
+</html>
